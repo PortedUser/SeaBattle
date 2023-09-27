@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "sgk1SS+/SiCKeCuVgBJSm5QCSUtBwxuT8sd3BM/r/pXtQH/19zYY3pAI9MVgEykPilNMSigTUBbAUMhkNUHTBg==",
+  "dgSpecHash": "4tQUeM4V8DvJQpj7EVXFttZ77M8aqhVavphSK81gZp9wmtRW7TA9cW88aea2vq7LGhcIaV1a2XDPGk4zUrHxwA==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

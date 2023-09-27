@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj": {}
+    "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj": {}
   },
   "projects": {
-    "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj": {
+    "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
+        "projectUniqueName": "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
         "projectName": "DesktopGame",
-        "projectPath": "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
+        "projectPath": "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\DesktopGame.csproj",
         "packagesPath": "C:\\Users\\Дмитрий\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\SeaBattle\\DesktopGame\\DesktopGame\\obj\\",
+        "outputPath": "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\DesktopGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
