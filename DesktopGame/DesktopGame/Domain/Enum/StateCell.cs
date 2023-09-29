@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Enum
 {
-    internal class StateCell
+    enum StateCell
     {
+        None,
+        Wave,
+        Cloud,
+        Explosion,
+        SingleDeckShip,
+        BowShip,
+        SternShip,
+        FirstCentralPartShip,
+        SecondCentralPartShip
     }
 }

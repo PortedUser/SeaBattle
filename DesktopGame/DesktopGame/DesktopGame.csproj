@@ -8,12 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Enum\" />
     <Folder Include="Domain\Uri\" />
     <Folder Include="MVVM\View\" />
-    <Folder Include="MVVM\Model\" />
     <Folder Include="MVVM\ViewModel\" />
-    <Folder Include="Images\" />
     <Folder Include="Theme\" />
   </ItemGroup>
 
