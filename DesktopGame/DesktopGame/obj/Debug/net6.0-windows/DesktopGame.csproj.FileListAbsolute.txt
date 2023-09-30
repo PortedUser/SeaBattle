@@ -31,3 +31,9 @@ D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\bin\Debug\net6.0-windows\ru
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\DesktopGame.csproj.AssemblyReference.cache
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\DesktopGame.csproj.CopyComplete
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattleView.g.cs
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\App.baml
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattleView.baml
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldView.g.cs
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldView.baml

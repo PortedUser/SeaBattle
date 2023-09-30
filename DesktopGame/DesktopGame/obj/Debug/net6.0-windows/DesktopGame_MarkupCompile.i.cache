@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\App.xaml
-11407045341
+31024862792
 
-121721000889
+21552426125
 195-1631245344
-MainWindow.xaml;
+MainWindow.xaml;MVVM\View\BattlefieldView.xaml;MVVM\View\BattleView.xaml;
 
-False
+True
 

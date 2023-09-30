@@ -43,7 +43,7 @@ namespace DesktopGame.MVVM.Model
 			Y = y;
 		}
 
-		public void SetState(StateCell newState)
+		public void SetFullState(StateCell newState)
 		{
 			CurrentState = newState;
 			var configManager = new ConfigManager();
