@@ -15,13 +15,28 @@ namespace DesktopGame.MVVM.Model
     {
         private BindingList<BindingList<BattlefieldCell>> _battle;
 
+        public BaseBattlefield() 
+        {
+            _battle = new BindingList<BindingList<BattlefieldCell>>();
+            for (int x = 0; x < 10; x++)
+            {
+                _battle.Add(new BindingList<BattlefieldCell>());
+                for (int y = 0; y < 10; y++)
+                {
+                    _battle[x].Add(new BattlefieldCell(x, y));
+                }
+            }
+        }
+
         public BattlefieldCell this[int index]
         {
             get
             {
                 try
                 {
-                    return null;
+                    int x = index / 10;
+                    int y = index % 10;
+                    return _battle[x][y];
                 }
                 catch (Exception e)
                 {
@@ -32,7 +47,9 @@ namespace DesktopGame.MVVM.Model
             {
                 try
                 {
-
+                    int x = index / 10;
+                    int y = index % 10;
+                    _battle[x][y] = value;
                 }
                 catch (Exception e)
                 {
