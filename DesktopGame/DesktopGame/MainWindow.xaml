@@ -6,11 +6,29 @@
         xmlns:local="clr-namespace:DesktopGame"
         xmlns:viewModel="clr-namespace:DesktopGame.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="900">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Grid>
-        <UserControl Content="{Binding CurrentVM}"/>
+    <Grid Background="#D70C8C">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        
+        <UserControl Content="{Binding CurrentVM}"
+                     Grid.Row="1"
+                     Grid.Column="1"/>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="0">
+            
+        </StackPanel>
     </Grid>
 </Window>
