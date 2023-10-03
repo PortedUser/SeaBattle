@@ -37,3 +37,5 @@ D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\Ap
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattleView.baml
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldView.g.cs
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldView.baml
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\Theme\LabelBattlefieldTheme.baml
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\Theme\BattlefieldCellTheme.baml

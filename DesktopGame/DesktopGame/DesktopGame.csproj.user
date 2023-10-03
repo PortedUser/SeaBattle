@@ -24,5 +24,11 @@
     <Page Update="MVVM\View\BattleView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Theme\BattlefieldCellTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\LabelBattlefieldTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

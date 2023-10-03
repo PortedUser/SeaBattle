@@ -8,6 +8,11 @@
     <Application.Resources>
         <ResourceDictionary>
 
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/LabelBattlefieldTheme.xaml"/>
+                <ResourceDictionary Source="Theme/BattlefieldCellTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
             <DataTemplate DataType="{x:Type viewModel:BattleViewModel}">
                 <view:BattleView/>
             </DataTemplate>

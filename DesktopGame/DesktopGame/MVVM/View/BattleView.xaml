@@ -13,7 +13,7 @@
     <Border Background="AliceBlue"
             CornerRadius="30,0,0,0"
             BorderThickness="2,2,0,0"
-            BorderBrush="#0ADFF2">
+            BorderBrush="#08BECF">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="5*"/>

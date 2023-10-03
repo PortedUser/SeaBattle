@@ -10,7 +10,7 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Grid Background="#D70C8C">
+    <Grid Background="#44F5E9">
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>

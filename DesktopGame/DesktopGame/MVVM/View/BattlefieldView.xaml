@@ -11,9 +11,9 @@
     <UserControl.DataContext>
         <viewModel:BattleViewModel/>
     </UserControl.DataContext>
-    <Border BorderBrush="#0ADFF2"
+    <Border BorderBrush="#08BECF"
             BorderThickness="0,0,2,2"
-            CornerRadius="0,10,3,10">
+            CornerRadius="0,10,7,10">
         <Grid MaxHeight="450"
               MaxWidth="450">
             <Grid.ColumnDefinitions>
@@ -40,16 +40,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Content="1" Grid.Row="0"/>
-                <Label Content="2" Grid.Row="1"/>
-                <Label Content="3" Grid.Row="2"/>
-                <Label Content="4" Grid.Row="3"/>
-                <Label Content="5" Grid.Row="4"/>
-                <Label Content="6" Grid.Row="5"/>
-                <Label Content="7" Grid.Row="6"/>
-                <Label Content="8" Grid.Row="7"/>
-                <Label Content="9" Grid.Row="8"/>
-                <Label Content="10" Grid.Row="9"/>
+                <Label Content="1" Grid.Row="0" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="2" Grid.Row="1" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="3" Grid.Row="2" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="4" Grid.Row="3" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="5" Grid.Row="4" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="6" Grid.Row="5" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="7" Grid.Row="6" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="8" Grid.Row="7" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="9" Grid.Row="8" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="10" Grid.Row="9" Style="{StaticResource LabelBattlefield}"/>
             </Grid>
 
             <Grid Grid.Column="1"
@@ -66,17 +66,147 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
-                <Label Content="a" Grid.Column="0"/>
-                <Label Content="b" Grid.Column="1"/>
-                <Label Content="c" Grid.Column="2"/>
-                <Label Content="d" Grid.Column="3"/>
-                <Label Content="e" Grid.Column="4"/>
-                <Label Content="f" Grid.Column="5"/>
-                <Label Content="g" Grid.Column="6"/>
-                <Label Content="h" Grid.Column="7"/>
-                <Label Content="i" Grid.Column="8"/>
-                <Label Content="j" Grid.Column="9"/>
+
+                <Label Content="a" Grid.Column="0" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="b" Grid.Column="1" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="c" Grid.Column="2" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="d" Grid.Column="3" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="e" Grid.Column="4" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="f" Grid.Column="5" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="g" Grid.Column="6" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="h" Grid.Column="7" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="i" Grid.Column="8" Style="{StaticResource LabelBattlefield}"/>
+                <Label Content="j" Grid.Column="9" Style="{StaticResource LabelBattlefield}"/>
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="0" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="1" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="2" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="4" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="6" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="7" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="8" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Grid.Row="9" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+
+
             </Grid>
         </Grid>
     </Border>
