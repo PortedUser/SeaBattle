@@ -13,6 +13,7 @@ namespace DesktopGame.MVVM.ViewModel
     {
         private BattlefieldViewModel _myBattleField;
         private BattlefieldViewModel _enemyBattleField;
+        private BattlefieldControlViewModel _controlVM;
 
         public BattlefieldViewModel MyBattleField
         {
@@ -26,10 +27,18 @@ namespace DesktopGame.MVVM.ViewModel
             set { _enemyBattleField = value; OnPropertyChanged(); }
         }
 
+        public BattlefieldControlViewModel ControlVM
+        {
+            get { return _controlVM; }
+            set { _controlVM = value; OnPropertyChanged(); }
+        }
+
+
         public BattleViewModel() 
         {
-            MyBattleField = new BattlefieldViewModel(TypeField.MyField);
-            EnemyBattleField = new BattlefieldViewModel(TypeField.EnemyField);
+            MyBattleField = new BattlefieldViewModel();
+            EnemyBattleField = new BattlefieldViewModel();
+            ControlVM = new BattlefieldControlViewModel();
         }
     }
 }

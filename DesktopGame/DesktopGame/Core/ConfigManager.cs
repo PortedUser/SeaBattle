@@ -16,7 +16,7 @@ namespace DesktopGame.Core
             try
             {
                 var appSettings = ConfigurationManager.AppSettings;
-                string result = appSettings[key] ?? throw new Exception("Не найден config");
+                string result = appSettings[key];
                 return result;
             }
             catch (Exception e)

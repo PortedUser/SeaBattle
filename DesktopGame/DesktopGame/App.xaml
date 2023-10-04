@@ -11,6 +11,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/LabelBattlefieldTheme.xaml"/>
                 <ResourceDictionary Source="Theme/BattlefieldCellTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ButtonControlBattleTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:BattleViewModel}">
@@ -18,6 +19,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:BattlefieldViewModel}">
                 <view:BattlefieldView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:BattlefieldControlViewModel}">
+                <view:BattlefieldControlView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

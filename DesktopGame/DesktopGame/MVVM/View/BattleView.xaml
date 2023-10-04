@@ -30,6 +30,10 @@
                  Grid.Column="0" Margin="5"/>
             <UserControl Content="{Binding EnemyBattleField}"
                  Grid.Column="2" Margin="5"/>
+
+            <UserControl Content="{Binding ControlVM}" 
+                         Grid.Column="0"
+                         Grid.Row="1"/>
         </Grid>
     </Border>
     

@@ -9,7 +9,7 @@
              d:DesignHeight="450" 
              d:DesignWidth="450">
     <UserControl.DataContext>
-        <viewModel:BattleViewModel/>
+        <viewModel:BattlefieldViewModel/>
     </UserControl.DataContext>
     <Border BorderBrush="#08BECF"
             BorderThickness="0,0,2,2"

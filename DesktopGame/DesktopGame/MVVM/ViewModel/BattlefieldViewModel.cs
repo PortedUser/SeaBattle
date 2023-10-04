@@ -12,24 +12,17 @@ namespace DesktopGame.MVVM.ViewModel
 {
     class BattlefieldViewModel: ObservableObject
     {
-        private IPlayingField _curVM;
+        private IPlayingField _curField;
 
-        public IPlayingField CurrentVM
+        public IPlayingField CurrentField
         {
-            get { return _curVM; }
-            set { _curVM = value; }
+            get { return _curField; }
+            set { _curField = value; }
         }
 
-        public BattlefieldViewModel(TypeField typeField) 
+        public BattlefieldViewModel() 
         {
-            if (typeField == TypeField.EnemyField)
-            {
-                CurrentVM = new EnemyBattlefield();
-            }
-            else if (typeField == TypeField.MyField)
-            {
-                CurrentVM = new MyBattlefield();
-            }
+            
         }
 	}
 }

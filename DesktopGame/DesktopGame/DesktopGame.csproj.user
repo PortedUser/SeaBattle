@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\View\BattlefieldControlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\BattlefieldView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +21,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="MVVM\View\BattlefieldControlView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MVVM\View\BattlefieldView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -25,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Theme\BattlefieldCellTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Theme\ButtonControlBattleTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Theme\LabelBattlefieldTheme.xaml">
