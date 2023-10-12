@@ -31,6 +31,5 @@ namespace DesktopGame.MVVM.ViewModel
 			var configManager = new ConfigManager();
 			return new Uri(configManager.GetConfig(state.ToString()),UriKind.Relative);
 		}
-
 	}
 }
