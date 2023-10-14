@@ -37,7 +37,11 @@ namespace DesktopGame.MVVM.ViewModel
         public BattleViewModel() 
         {
             MyBattleField = new BattlefieldViewModel();
+            MyBattleField.CreateField(TypeField.MyField);
+
             EnemyBattleField = new BattlefieldViewModel();
+            EnemyBattleField.CreateField(TypeField.EnemyField);
+
             ControlVM = new BattlefieldControlViewModel();
         }
     }

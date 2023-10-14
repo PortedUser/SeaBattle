@@ -1,4 +1,5 @@
-﻿using DesktopGame.Domain.Interfaces;
+﻿using DesktopGame.Domain.Enum;
+using DesktopGame.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace DesktopGame.MVVM.Model
 
         public void CreateField()
         {
-            
+            foreach (BattlefieldCell item in this)
+            {
+                item.SetFullState(StateCell.Cloud);
+            }
         }
     }
 }

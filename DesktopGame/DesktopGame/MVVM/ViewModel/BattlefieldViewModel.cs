@@ -24,5 +24,19 @@ namespace DesktopGame.MVVM.ViewModel
         {
             
         }
+
+        public void CreateField(TypeField type)
+        {
+            if (type == TypeField.EnemyField)
+            {
+                CurrentField = new EnemyBattlefield();
+                CurrentField.CreateField();
+            }
+            else if (type == TypeField.MyField)
+            {
+                CurrentField = new MyBattlefield();
+                CurrentField.CreateField();
+            }
+        }
 	}
 }
