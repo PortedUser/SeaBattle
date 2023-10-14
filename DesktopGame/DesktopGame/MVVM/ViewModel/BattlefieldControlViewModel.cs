@@ -13,17 +13,40 @@ namespace DesktopGame.MVVM.ViewModel
     class BattlefieldControlViewModel : ObservableObject
     {
 		private BitmapImage _bowShipSetter;
+        private BitmapImage _doubleShipSetter;
+        private BitmapImage _threeShipSetter;
+        private BitmapImage _fourShipSetter;
 
-		public BitmapImage BowShipSetter
+        public BitmapImage BowShipSetter
         {
 			get { return _bowShipSetter; }
 			set { _bowShipSetter = value; OnPropertyChanged(); }
 		}
 
+        public BitmapImage DoubleShipSetter
+        {
+            get { return _bowShipSetter; }
+            set { _bowShipSetter = value; OnPropertyChanged(); }
+        }
 
-		public BattlefieldControlViewModel()
+        public BitmapImage ThreeShipSetter
+        {
+            get { return _threeShipSetter; }
+            set { _threeShipSetter = value; OnPropertyChanged(); }
+        }
+
+        public BitmapImage FourShipSetter
 		{
-			BowShipSetter = new BitmapImage(GetUri(StateCell.BowShip));
+			get { return _fourShipSetter; }
+			set { _fourShipSetter = value; OnPropertyChanged(); }
+		}
+
+        public BattlefieldControlViewModel()
+		{
+			BowShipSetter = new BitmapImage(GetUri(StateCell.SingleDeckShip));
+			DoubleShipSetter = new BitmapImage(GetUri(StateCell.DoubleDeckShip));
+            ThreeShipSetter = new BitmapImage(GetUri(StateCell.ThreeDeckShip));
+            FourShipSetter = new BitmapImage(GetUri(StateCell.FourDeckShip));
         }
 
 		private Uri GetUri(StateCell state)

@@ -7,10 +7,17 @@
         xmlns:viewModel="clr-namespace:DesktopGame.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#44F5E9"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Grid Background="#44F5E9">
+    
+    <Grid>
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>

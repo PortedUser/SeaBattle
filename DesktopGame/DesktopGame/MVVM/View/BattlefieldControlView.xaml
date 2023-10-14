@@ -25,7 +25,7 @@
         <Border Grid.Row="0"
                 Grid.Column="0">
             <StackPanel>
-                <Grid>
+                <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="3*"/>
@@ -36,31 +36,35 @@
                         Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
-                <Grid>
+                <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
 
                     <Button 
-                        Content="{Binding BowShipSetter}" 
+                        Content="{Binding DoubleShipSetter}" 
                         Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
-                <Grid>
+                <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
 
                     <Button 
-                        Content="{Binding BowShipSetter}" 
+                        Content="{Binding ThreeShipSetter}" 
                         Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
-                <Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
                     <Button 
-                        Content="{Binding BowShipSetter}" 
+                        Content="{Binding FourShipSetter}" 
                         Style="{StaticResource ControlBattle}"/>
                 </Grid>
             </StackPanel>
