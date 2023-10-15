@@ -34,6 +34,7 @@
             <UserControl Content="{Binding ControlVM}" 
                          Grid.Column="0"
                          Grid.Row="1"/>
+
         </Grid>
     </Border>
     

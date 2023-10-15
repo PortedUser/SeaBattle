@@ -9,6 +9,7 @@
                         <Border Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                Opacity="{TemplateBinding Opacity}"
                                 CornerRadius="5">
                             
                         </Border>
@@ -19,6 +20,7 @@
             <Setter Property="Background" Value="#E6F8FF"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Opacity" Value="0.95"/>
         </Style.Setters>
 
         <Style.Triggers>

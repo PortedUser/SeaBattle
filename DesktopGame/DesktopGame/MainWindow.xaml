@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:DesktopGame"
         xmlns:viewModel="clr-namespace:DesktopGame.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900">
+        Title="MainWindow" 
+        Height="600" 
+        Width="900"
+        WindowState="Maximized">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#44F5E9"/>
@@ -20,7 +23,7 @@
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
         

@@ -1,4 +1,5 @@
-﻿using DesktopGame.Domain.Interfaces;
+﻿using DesktopGame.Core;
+using DesktopGame.Domain.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Windows.Navigation;
 
 namespace DesktopGame.MVVM.Model
 {
-    class BaseBattlefield : IBattlefield
+    class BaseBattlefield : ObservableObject, IBattlefield
     {
         private BindingList<BindingList<BattlefieldCell>> _battle;
 

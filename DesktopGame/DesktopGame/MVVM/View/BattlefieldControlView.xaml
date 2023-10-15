@@ -11,7 +11,7 @@
     <UserControl.DataContext>
         <viewModel:BattlefieldControlViewModel/>
     </UserControl.DataContext>
-    <Grid>
+    <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
