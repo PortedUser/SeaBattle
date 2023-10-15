@@ -15,16 +15,27 @@ namespace DesktopGame.MVVM.Model
     class BaseBattlefield : ObservableObject, IBattlefield
     {
         private BindingList<BindingList<BattlefieldCell>> _battle;
+        private BindingList<BattleCommand> _commands;
+
+        public BindingList<BattleCommand> Commands
+        {
+            get { return _commands; }
+            set { _commands = value;  OnPropertyChanged(); }
+        }
+
 
         public BaseBattlefield() 
         {
             _battle = new BindingList<BindingList<BattlefieldCell>>();
+            _commands = new BindingList<BattleCommand>();
+
             for (int x = 0; x < 10; x++)
             {
                 _battle.Add(new BindingList<BattlefieldCell>());
                 for (int y = 0; y < 10; y++)
                 {
                     _battle[x].Add(new BattlefieldCell(x, y));
+                    _commands.Add(new BattleCommand(x,y));
                 }
             }
         }
@@ -92,9 +103,9 @@ namespace DesktopGame.MVVM.Model
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var item in _battle)
+            foreach (var line in _battle)
             {
-                foreach(var cell in item)
+                foreach(var cell in line)
                 {
                     yield return cell;
                 }

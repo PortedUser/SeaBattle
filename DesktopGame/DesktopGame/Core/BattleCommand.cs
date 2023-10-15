@@ -7,47 +7,22 @@ using System.Windows.Input;
 
 namespace DesktopGame.Core
 {
-    class BattleCommand : ICommand
+    class BattleCommand
     {
-        private Action<object> _execute;
-        private Func<object, bool> _canExecute;
-        private int x;
-        private int y;
+		private RelayCommand _battleFieldCommand;
+        public int X { get; }
+		public int Y { get; }
 
-        public int X
-        {
-            get { return x; }
-            private set { x = value; }
-        }
+        public RelayCommand Command
+		{
+			get { return _battleFieldCommand; }
+			set { _battleFieldCommand = value; }
+		}
 
-        public int Y
-        {
-            get { return y; }
-            private set { y = value; }
-        }
-
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
-
-        public BattleCommand(Action<object> execute, int _x, int _y, Func<object, bool> canExecute)
-        {
-            X = _x;
-            Y = _y;
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return _canExecute(parameter);
-        }
-
-        public void Execute(object parameter)
-        {
-            _execute(parameter);
-        }
-    }
+		public BattleCommand(int x, int y)
+		{
+			Y = y;
+			X = x;
+		}
+	}
 }
