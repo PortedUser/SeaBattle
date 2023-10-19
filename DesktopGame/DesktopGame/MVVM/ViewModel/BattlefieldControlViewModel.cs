@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using DesktopGame.Core;
 using DesktopGame.Domain.Enum;
+using DesktopGame.MVVM.Model;
 
 namespace DesktopGame.MVVM.ViewModel
 {
@@ -16,37 +17,68 @@ namespace DesktopGame.MVVM.ViewModel
         private BitmapImage _doubleShipSetter;
         private BitmapImage _threeShipSetter;
         private BitmapImage _fourShipSetter;
+        private StateShip _lastStateShip;
+
+        public RelayCommand SetBowShip { get; private set; }
+        public RelayCommand SetDoubleShip { get; private set; }
+        public RelayCommand SetThreeShip { get; private set; }
+        public RelayCommand SetFourShip { get; private set; }
+
+        public StateShip LastStateShip
+        {
+            get { return _lastStateShip; }
+            set { _lastStateShip = value; OnPropertyChanged(); }
+        }
 
         public BitmapImage BowShipSetter
         {
 			get { return _bowShipSetter; }
-			set { _bowShipSetter = value; OnPropertyChanged(); }
+			set { _bowShipSetter = value; }
 		}
 
         public BitmapImage DoubleShipSetter
         {
             get { return _doubleShipSetter; }
-            set { _doubleShipSetter = value; OnPropertyChanged(); }
+            set { _doubleShipSetter = value; }
         }
-
         public BitmapImage ThreeShipSetter
         {
             get { return _threeShipSetter; }
-            set { _threeShipSetter = value; OnPropertyChanged(); }
+            set { _threeShipSetter = value;}
         }
 
         public BitmapImage FourShipSetter
 		{
 			get { return _fourShipSetter; }
-			set { _fourShipSetter = value; OnPropertyChanged(); }
+            set { _fourShipSetter = value;}
 		}
 
         public BattlefieldControlViewModel()
 		{
-			BowShipSetter = new BitmapImage(GetUri(TypeShip.BowShip));
-			DoubleShipSetter = new BitmapImage(GetUri(TypeShip.DoubleDeckShip));
-            ThreeShipSetter = new BitmapImage(GetUri(TypeShip.ThreeDeckShip));
-            FourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
+			_bowShipSetter = new BitmapImage(GetUri(TypeShip.BowShip));
+			_doubleShipSetter = new BitmapImage(GetUri(TypeShip.DoubleDeckShip));
+            _threeShipSetter = new BitmapImage(GetUri(TypeShip.ThreeDeckShip));
+            _fourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
+
+            SetBowShip = new RelayCommand(o => 
+            { 
+                LastStateShip = new StateShip(TypeShip.BowShip);
+            });
+
+            SetDoubleShip = new RelayCommand(o =>
+            {
+                LastStateShip = new StateShip(TypeShip.DoubleDeckShip);
+            });
+
+            SetThreeShip = new RelayCommand(o =>
+            {
+                LastStateShip = new StateShip(TypeShip.ThreeDeckShip);
+            });
+
+            SetFourShip = new RelayCommand(o =>
+            {
+                LastStateShip = new StateShip(TypeShip.FourDeckShip);
+            });
         }
 
 		private Uri GetUri(TypeShip state)
