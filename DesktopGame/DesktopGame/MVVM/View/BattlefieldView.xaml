@@ -7,10 +7,8 @@
              xmlns:local="clr-namespace:DesktopGame.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" 
-             d:DesignWidth="450">
-    <UserControl.DataContext>
-        <viewModel:BattlefieldViewModel/>
-    </UserControl.DataContext>
+             d:DesignWidth="450"
+             d:DataContext="{d:DesignInstance {x:Type viewModel:BattlefieldViewModel}}">
     <Border BorderBrush="#08BECF"
             BorderThickness="0,0,2,2"
             CornerRadius="0,10,7,10">
@@ -105,107 +103,106 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="0" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="1" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="2" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="4" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="6" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="7" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="8" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
-                <Button Grid.Row="9" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
-
+                <Button Content="{Binding CurrentField[0].CurrentImage}" Grid.Row="0" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[1].CurrentImage}" Grid.Row="0" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[2].CurrentImage}" Grid.Row="0" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[3].CurrentImage}" Grid.Row="0" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[4].CurrentImage}" Grid.Row="0" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[5].CurrentImage}" Grid.Row="0" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[6].CurrentImage}" Grid.Row="0" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[7].CurrentImage}" Grid.Row="0" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[8].CurrentImage}" Grid.Row="0" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[9].CurrentImage}" Grid.Row="0" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[10].CurrentImage}" Grid.Row="1" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[11].CurrentImage}" Grid.Row="1" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[12].CurrentImage}" Grid.Row="1" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[13].CurrentImage}" Grid.Row="1" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[14].CurrentImage}" Grid.Row="1" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[15].CurrentImage}" Grid.Row="1" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[16].CurrentImage}" Grid.Row="1" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[17].CurrentImage}" Grid.Row="1" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[18].CurrentImage}" Grid.Row="1" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[19].CurrentImage}" Grid.Row="1" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[20].CurrentImage}" Grid.Row="2" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[21].CurrentImage}" Grid.Row="2" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[22].CurrentImage}" Grid.Row="2" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[23].CurrentImage}" Grid.Row="2" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[24].CurrentImage}" Grid.Row="2" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[25].CurrentImage}" Grid.Row="2" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[26].CurrentImage}" Grid.Row="2" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[27].CurrentImage}" Grid.Row="2" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[28].CurrentImage}" Grid.Row="2" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[29].CurrentImage}" Grid.Row="2" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[30].CurrentImage}" Grid.Row="3" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[31].CurrentImage}" Grid.Row="3" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[32].CurrentImage}" Grid.Row="3" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[33].CurrentImage}" Grid.Row="3" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[34].CurrentImage}" Grid.Row="3" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[35].CurrentImage}" Grid.Row="3" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[36].CurrentImage}" Grid.Row="3" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[37].CurrentImage}" Grid.Row="3" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[38].CurrentImage}" Grid.Row="3" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[39].CurrentImage}" Grid.Row="3" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[40].CurrentImage}" Grid.Row="4" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[41].CurrentImage}" Grid.Row="4" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[42].CurrentImage}" Grid.Row="4" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[43].CurrentImage}" Grid.Row="4" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[44].CurrentImage}" Grid.Row="4" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[45].CurrentImage}" Grid.Row="4" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[46].CurrentImage}" Grid.Row="4" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[47].CurrentImage}" Grid.Row="4" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[48].CurrentImage}" Grid.Row="4" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[49].CurrentImage}" Grid.Row="4" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[50].CurrentImage}" Grid.Row="5" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[51].CurrentImage}" Grid.Row="5" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[52].CurrentImage}" Grid.Row="5" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[53].CurrentImage}" Grid.Row="5" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[54].CurrentImage}" Grid.Row="5" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[55].CurrentImage}" Grid.Row="5" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[56].CurrentImage}" Grid.Row="5" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[57].CurrentImage}" Grid.Row="5" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[58].CurrentImage}" Grid.Row="5" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[59].CurrentImage}" Grid.Row="5" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[60].CurrentImage}" Grid.Row="6" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[61].CurrentImage}" Grid.Row="6" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[62].CurrentImage}" Grid.Row="6" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[63].CurrentImage}" Grid.Row="6" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[64].CurrentImage}" Grid.Row="6" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[65].CurrentImage}" Grid.Row="6" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[66].CurrentImage}" Grid.Row="6" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[67].CurrentImage}" Grid.Row="6" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[68].CurrentImage}" Grid.Row="6" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[69].CurrentImage}" Grid.Row="6" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[70].CurrentImage}" Grid.Row="7" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[71].CurrentImage}" Grid.Row="7" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[72].CurrentImage}" Grid.Row="7" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[73].CurrentImage}" Grid.Row="7" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[74].CurrentImage}" Grid.Row="7" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[75].CurrentImage}" Grid.Row="7" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[76].CurrentImage}" Grid.Row="7" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[77].CurrentImage}" Grid.Row="7" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[78].CurrentImage}" Grid.Row="7" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[79].CurrentImage}" Grid.Row="7" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[80].CurrentImage}" Grid.Row="8" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[81].CurrentImage}" Grid.Row="8" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[82].CurrentImage}" Grid.Row="8" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[83].CurrentImage}" Grid.Row="8" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[84].CurrentImage}" Grid.Row="8" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[85].CurrentImage}" Grid.Row="8" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[86].CurrentImage}" Grid.Row="8" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[87].CurrentImage}" Grid.Row="8" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[88].CurrentImage}" Grid.Row="8" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[89].CurrentImage}" Grid.Row="8" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[90].CurrentImage}" Grid.Row="9" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[91].CurrentImage}" Grid.Row="9" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[92].CurrentImage}" Grid.Row="9" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[93].CurrentImage}" Grid.Row="9" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[94].CurrentImage}" Grid.Row="9" Grid.Column="4" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[95].CurrentImage}" Grid.Row="9" Grid.Column="5" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[96].CurrentImage}" Grid.Row="9" Grid.Column="6" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[97].CurrentImage}" Grid.Row="9" Grid.Column="7" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[98].CurrentImage}" Grid.Row="9" Grid.Column="8" Style="{StaticResource BattlefieldCell}"/>
+                <Button Content="{Binding CurrentField[99].CurrentImage}" Grid.Row="9" Grid.Column="9" Style="{StaticResource BattlefieldCell}"/>
 
             </Grid>
         </Grid>

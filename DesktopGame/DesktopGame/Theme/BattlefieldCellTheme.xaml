@@ -11,12 +11,14 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Opacity="{TemplateBinding Opacity}"
                                 CornerRadius="5">
-                            
+                            <Image Source="{TemplateBinding Content}"
+                                   OverridesDefaultStyle="True"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
+            
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Background" Value="#E6F8FF"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>

@@ -25,8 +25,8 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BitmapImage DoubleShipSetter
         {
-            get { return _bowShipSetter; }
-            set { _bowShipSetter = value; OnPropertyChanged(); }
+            get { return _doubleShipSetter; }
+            set { _doubleShipSetter = value; OnPropertyChanged(); }
         }
 
         public BitmapImage ThreeShipSetter

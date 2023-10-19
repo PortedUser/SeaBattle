@@ -31,11 +31,13 @@ namespace DesktopGame.MVVM.ViewModel
             {
                 CurrentField = new EnemyBattlefield();
                 CurrentField.CreateField();
+                OnPropertyChanged();
             }
             else if (type == TypeField.MyField)
             {
                 CurrentField = new MyBattlefield();
                 CurrentField.CreateField();
+                OnPropertyChanged();
             }
         }
 	}

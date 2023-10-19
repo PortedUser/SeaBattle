@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Cloud.png" />
     <None Remove="Images\Ship.png" />
     <None Remove="Images\Ship1.png" />
     <None Remove="Images\Ship2.png" />
     <None Remove="Images\Ship3.png" />
     <None Remove="Images\Ship4.png" />
+    <None Remove="Images\Wave.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,11 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Cloud.png" />
     <Resource Include="Images\Ship.png" />
     <Resource Include="Images\Ship1.png" />
     <Resource Include="Images\Ship2.png" />
     <Resource Include="Images\Ship3.png" />
     <Resource Include="Images\Ship4.png" />
+    <Resource Include="Images\Wave.png" />
   </ItemGroup>
 
 </Project>
