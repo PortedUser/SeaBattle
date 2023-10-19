@@ -43,13 +43,13 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BattlefieldControlViewModel()
 		{
-			BowShipSetter = new BitmapImage(GetUri(StateCell.SingleDeckShip));
-			DoubleShipSetter = new BitmapImage(GetUri(StateCell.DoubleDeckShip));
-            ThreeShipSetter = new BitmapImage(GetUri(StateCell.ThreeDeckShip));
-            FourShipSetter = new BitmapImage(GetUri(StateCell.FourDeckShip));
+			BowShipSetter = new BitmapImage(GetUri(TypeShip.BowShip));
+			DoubleShipSetter = new BitmapImage(GetUri(TypeShip.DoubleDeckShip));
+            ThreeShipSetter = new BitmapImage(GetUri(TypeShip.ThreeDeckShip));
+            FourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
         }
 
-		private Uri GetUri(StateCell state)
+		private Uri GetUri(TypeShip state)
 		{
 			var configManager = new ConfigManager();
 			return new Uri(configManager.GetConfig(state.ToString()),UriKind.Relative);
