@@ -12,10 +12,15 @@ namespace DesktopGame.Domain.Enum
         Wave,
         Cloud,
         Explosion,
-        SingleDeckShip,
         BowShip,
-        SternShip,
-        FirstCentralPartShip,
-        SecondCentralPartShip
+        Deck2_1,
+        Deck2_2,
+        Deck3_1,
+        Deck3_2,
+        Deck3_3,
+        Deck4_1, 
+        Deck4_2,
+        Deck4_3,
+        Deck4_4
     }
 }

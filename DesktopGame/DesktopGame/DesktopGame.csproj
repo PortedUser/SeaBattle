@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\2Deck1.png" />
+    <None Remove="Images\2Deck2.png" />
+    <None Remove="Images\3Deck1.png" />
+    <None Remove="Images\3Deck2.png" />
+    <None Remove="Images\3Deck3.png" />
+    <None Remove="Images\4Deck1.png" />
+    <None Remove="Images\4Deck2.png" />
+    <None Remove="Images\4Deck3.png" />
+    <None Remove="Images\4Deck4.png" />
     <None Remove="Images\Cloud.png" />
     <None Remove="Images\Ship.png" />
     <None Remove="Images\Ship1.png" />
@@ -18,10 +27,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\3Deck3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\2Deck1.png" />
+    <Resource Include="Images\2Deck2.png" />
+    <Resource Include="Images\3Deck1.png" />
+    <Resource Include="Images\3Deck2.png" />
+    <Resource Include="Images\4Deck1.png" />
+    <Resource Include="Images\4Deck2.png" />
+    <Resource Include="Images\4Deck3.png" />
+    <Resource Include="Images\4Deck4.png" />
     <Resource Include="Images\Cloud.png" />
     <Resource Include="Images\Ship.png" />
     <Resource Include="Images\Ship1.png" />
