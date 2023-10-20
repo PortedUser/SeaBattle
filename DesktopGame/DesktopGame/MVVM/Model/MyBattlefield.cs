@@ -27,30 +27,61 @@ namespace DesktopGame.MVVM.Model
 
                     if (state.CurrentType == TypeShip.BowShip)
                     {
-                        SetBowShip(cm, state);
+                        SetBowShip(cm);
                     }
                     else if (state.CurrentType == TypeShip.DoubleDeckShip)
                     {
-
+                        SetDoubleShip(cm);
                     }
                     else if (state.CurrentType == TypeShip.ThreeDeckShip)
                     {
-
+                        SetThreeShip(cm);
                     }
                     else if (state.CurrentType == TypeShip.FourDeckShip)
                     {
-
+                        SetFourShip(cm);
                     }
                 });
             }
         }
 
-        private void SetDoubleShip()
+        private void SetDoubleShip(BattleCommand cm)
         {
-
+            var x = cm.X;
+            var y = cm.Y;
+            if (y + 1 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck2_1);
+                this[x , y + 1 ].SetFullState(StateCell.Deck2_2);
+            }
         }
 
-        private void SetBowShip(BattleCommand cm,StateShip state)
+        private void SetThreeShip(BattleCommand cm)
+        {
+            var x = cm.X;
+            var y = cm.Y;
+            if (y + 2 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck3_1);
+                this[x, y + 1].SetFullState(StateCell.Deck3_2);
+                this[x, y + 2].SetFullState(StateCell.Deck3_3);
+            }
+        }
+
+        private void SetFourShip(BattleCommand cm)
+        {
+            var x = cm.X;
+            var y = cm.Y;
+            if (y + 3 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck4_1);
+                this[x, y + 1].SetFullState(StateCell.Deck4_2);
+                this[x, y + 2].SetFullState(StateCell.Deck4_3);
+                this[x, y + 3].SetFullState(StateCell.Deck4_4);
+            }
+        }
+
+        private void SetBowShip(BattleCommand cm)
         {
             this[cm.X, cm.Y].SetFullState(StateCell.BowShip);
             
