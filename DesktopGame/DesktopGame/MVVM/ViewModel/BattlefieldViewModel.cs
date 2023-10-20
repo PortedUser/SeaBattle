@@ -32,12 +32,14 @@ namespace DesktopGame.MVVM.ViewModel
             {
                 CurrentField = new EnemyBattlefield();
                 CurrentField.CreateField();
+                CurrentField.SetParentVM(this);
                 OnPropertyChanged();
             }
             else if (type == TypeField.MyField)
             {
                 CurrentField = new MyBattlefield();
                 CurrentField.CreateField();
+                CurrentField.SetParentVM(this);
                 OnPropertyChanged();
             }
         }

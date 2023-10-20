@@ -82,6 +82,11 @@ namespace DesktopGame.MVVM.ViewModel
             });
         }
 
+        public StateShip GetLastState()
+        {
+            return _lastStateShip;
+        }
+
 		private Uri GetUri(TypeShip state)
 		{
 			var configManager = new ConfigManager();

@@ -9,7 +9,7 @@ namespace DesktopGame.MVVM.Model
 {
     class StateShip
     {
-        public TypeShip CurrentType { get; private set; }
+        public TypeShip CurrentType { get; set; }
         public int AngleRotation { get; set; }
 
         public StateShip(TypeShip typeShip)

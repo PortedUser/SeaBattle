@@ -6,10 +6,8 @@
              xmlns:viewModel="clr-namespace:DesktopGame.MVVM.ViewModel"
              xmlns:local="clr-namespace:DesktopGame.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="450">
-    <UserControl.DataContext>
-        <viewModel:BattleViewModel/>
-    </UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="450"
+             d:DataContext="{d:DesignInstance {x:Type viewModel:BattleViewModel}}">
     <Border Background="AliceBlue"
             CornerRadius="30,0,0,0"
             BorderThickness="2,2,0,0"
@@ -26,9 +24,9 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <UserControl Content="{Binding MyBattleField}"
+            <UserControl Content="{Binding MyField}"
                  Grid.Column="0" Margin="5"/>
-            <UserControl Content="{Binding EnemyBattleField}"
+            <UserControl Content="{Binding EnemyField}"
                  Grid.Column="2" Margin="5"/>
 
             <UserControl Content="{Binding ControlVM}" 

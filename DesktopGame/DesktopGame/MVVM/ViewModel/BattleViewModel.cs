@@ -16,13 +16,13 @@ namespace DesktopGame.MVVM.ViewModel
         private BattlefieldViewModel _enemyBattleField;
         private BattlefieldControlViewModel _controlVM;
 
-        public BattlefieldViewModel MyBattleField
+        public BattlefieldViewModel MyField
         {
             get { return _myBattleField; }
             set { _myBattleField = value; OnPropertyChanged(); }
         }
 
-        public BattlefieldViewModel EnemyBattleField
+        public BattlefieldViewModel EnemyField
         {
             get { return _enemyBattleField; }
             set { _enemyBattleField = value; OnPropertyChanged(); }
@@ -37,18 +37,20 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BattleViewModel() 
         {
-            MyBattleField = new BattlefieldViewModel();
-            MyBattleField.CreateField(TypeField.MyField);
+            MyField = new BattlefieldViewModel();
+            MyField.CreateField(TypeField.MyField);
+            MyField.SetParentVM(this);
 
-            EnemyBattleField = new BattlefieldViewModel();
-            EnemyBattleField.CreateField(TypeField.EnemyField);
+            EnemyField = new BattlefieldViewModel();
+            EnemyField.CreateField(TypeField.EnemyField);
+            EnemyField.SetParentVM(this);
 
             ControlVM = new BattlefieldControlViewModel();
         }
 
         public StateShip GetLastSetState()
         {
-            return ControlVM.LastStateShip;
+            return ControlVM.GetLastState();
         }
     }
 }

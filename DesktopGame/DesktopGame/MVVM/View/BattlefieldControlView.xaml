@@ -7,10 +7,9 @@
              xmlns:local="clr-namespace:DesktopGame.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" 
-             d:DesignWidth="450">
-    <UserControl.DataContext>
-        <viewModel:BattlefieldControlViewModel/>
-    </UserControl.DataContext>
+             d:DesignWidth="450"
+             d:DataContext="{d:DesignInstance {x:Type viewModel:BattlefieldControlViewModel}}">
+  
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
@@ -32,8 +31,8 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Command="{Binding SetBowShip}"
-                        Content="{Binding BowShipSetter}" 
-                        Style="{StaticResource ControlBattle}"/>
+                            Content="{Binding BowShipSetter}" 
+                            Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
                 <Grid Margin="5">
@@ -43,8 +42,8 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Command="{Binding SetDoubleShip}"
-                        Content="{Binding DoubleShipSetter}" 
-                        Style="{StaticResource ControlBattle}"/>
+                            Content="{Binding DoubleShipSetter}" 
+                            Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
                 <Grid Margin="5">
@@ -54,8 +53,8 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Command="{Binding SetThreeShip}"
-                        Content="{Binding ThreeShipSetter}" 
-                        Style="{StaticResource ControlBattle}"/>
+                            Content="{Binding ThreeShipSetter}" 
+                            Style="{StaticResource ControlBattle}"/>
                 </Grid>
 
                 <Grid Margin="5">
@@ -63,9 +62,10 @@
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
+                    
                     <Button Command="{Binding SetFourShip}"
-                        Content="{Binding FourShipSetter}" 
-                        Style="{StaticResource ControlBattle}"/>
+                            Content="{Binding FourShipSetter}" 
+                            Style="{StaticResource ControlBattle}"/>
                 </Grid>
             </StackPanel>
         </Border>

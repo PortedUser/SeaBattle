@@ -23,5 +23,10 @@ namespace DesktopGame.MVVM.Model
                 item.SetFullState(StateCell.Cloud);
             }
         }
+
+        public void SetParentVM(BattlefieldViewModel vm)
+        {
+            
+        }
     }
 }
