@@ -13,6 +13,7 @@ namespace DesktopGame.MVVM.ViewModel
     class BattlefieldViewModel: ObservableObject
     {
         private IPlayingField _curField;
+        private BattleViewModel _parentVM;
 
         public IPlayingField CurrentField
         {
@@ -39,6 +40,16 @@ namespace DesktopGame.MVVM.ViewModel
                 CurrentField.CreateField();
                 OnPropertyChanged();
             }
+        }
+
+        public void SetParentVM(BattleViewModel vm)
+        {
+            _parentVM = vm;
+        }
+
+        public StateShip GetLastSetState()
+        {
+            return _parentVM.GetLastSetState();
         }
 	}
 }

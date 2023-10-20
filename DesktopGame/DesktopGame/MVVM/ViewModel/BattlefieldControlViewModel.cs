@@ -59,6 +59,7 @@ namespace DesktopGame.MVVM.ViewModel
 			_doubleShipSetter = new BitmapImage(GetUri(TypeShip.DoubleDeckShip));
             _threeShipSetter = new BitmapImage(GetUri(TypeShip.ThreeDeckShip));
             _fourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
+            LastStateShip = new StateShip(TypeShip.BowShip);
 
             SetBowShip = new RelayCommand(o => 
             { 

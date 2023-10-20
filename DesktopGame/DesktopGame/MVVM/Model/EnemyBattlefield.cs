@@ -1,5 +1,6 @@
 ﻿using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
+using DesktopGame.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

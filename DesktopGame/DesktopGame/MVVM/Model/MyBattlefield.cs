@@ -1,6 +1,7 @@
 ﻿using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model;
+using DesktopGame.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace DesktopGame.MVVM.Model
 {
     class MyBattlefield : BaseBattlefield, IPlayingField
     {
+        private BattlefieldViewModel _parentVM;
         public MyBattlefield() : base()
         {
             
@@ -22,6 +24,16 @@ namespace DesktopGame.MVVM.Model
             {
                 item.SetFullState(StateCell.Wave);
             }
+        }
+
+        public void SetParentVM(BattlefieldViewModel vm)
+        {
+            _parentVM = vm;
+        }
+
+        private StateShip GetLastSetState()
+        {
+            return _parentVM.GetLastSetState();
         }
     }
 }

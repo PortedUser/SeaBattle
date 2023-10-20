@@ -1,6 +1,7 @@
 ﻿using DesktopGame.Core;
 using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
+using DesktopGame.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,11 @@ namespace DesktopGame.MVVM.ViewModel
             EnemyBattleField.CreateField(TypeField.EnemyField);
 
             ControlVM = new BattlefieldControlViewModel();
+        }
+
+        public StateShip GetLastSetState()
+        {
+            return ControlVM.LastStateShip;
         }
     }
 }
