@@ -69,9 +69,12 @@
                 </Grid>
             </StackPanel>
         </Border>
-        <Button Grid.Row="1" Grid.Column="1" 
-                Command="{Binding SetRotate}"
-                Content="{Binding Rotate.CurrentImage}"
-                Style="{StaticResource BattlefieldCell}"/>
+        
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button Command="{Binding SetRotate}"
+                    Content="{Binding Rotate.CurrentImage}"
+                    Style="{StaticResource BattlefieldCell}"/>
+        </StackPanel>
+        
     </Grid>
 </UserControl>
