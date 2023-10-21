@@ -30,14 +30,10 @@ namespace DesktopGame.MVVM.Model
 		    private	set { _state = value; OnPropertyChanged(); }
 		}
 
-		public RelayCommand CurrentCommand
-		{
-			get { return _command; }
-			set { _command = value; OnPropertyChanged(); }
-		}
+        public int Angle { get; set; }
 
 
-		public BattlefieldCell(int x, int y)
+        public BattlefieldCell(int x, int y)
 		{
 			X = x;
 			Y = y;

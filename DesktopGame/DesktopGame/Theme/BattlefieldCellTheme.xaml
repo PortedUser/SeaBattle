@@ -11,8 +11,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Opacity="{TemplateBinding Opacity}"
                                 CornerRadius="5">
-                            <Image Source="{TemplateBinding Content}"
-                                   OverridesDefaultStyle="True"/>
+                            <Image OverridesDefaultStyle="True" Source="{TemplateBinding Content}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

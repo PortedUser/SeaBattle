@@ -9,21 +9,46 @@
 
   <ItemGroup>
     <None Remove="Images\2Deck1.png" />
+    <None Remove="Images\2Deck1_90.png" />
     <None Remove="Images\2Deck2.png" />
+    <None Remove="Images\2Deck2_90.png" />
     <None Remove="Images\3Deck1.png" />
+    <None Remove="Images\3Deck1_90.png" />
     <None Remove="Images\3Deck2.png" />
+    <None Remove="Images\3Deck2_90.png" />
     <None Remove="Images\3Deck3.png" />
+    <None Remove="Images\3Deck3_90.png" />
     <None Remove="Images\4Deck1.png" />
+    <None Remove="Images\4Deck1_90.png" />
     <None Remove="Images\4Deck2.png" />
+    <None Remove="Images\4Deck2_90.png" />
     <None Remove="Images\4Deck3.png" />
+    <None Remove="Images\4Deck3_90.png" />
     <None Remove="Images\4Deck4.png" />
+    <None Remove="Images\4Deck4_90.png" />
     <None Remove="Images\Cloud.png" />
+    <None Remove="Images\Rotate.png" />
+    <None Remove="Images\Rotate_90.png.png" />
     <None Remove="Images\Ship.png" />
     <None Remove="Images\Ship1.png" />
     <None Remove="Images\Ship2.png" />
     <None Remove="Images\Ship3.png" />
     <None Remove="Images\Ship4.png" />
+    <None Remove="Images\Ship_90.png" />
     <None Remove="Images\Wave.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\2Deck1_90.png" />
+    <Resource Include="Images\2Deck2_90.png" />
+    <Resource Include="Images\3Deck1_90.png" />
+    <Resource Include="Images\3Deck2_90.png" />
+    <Resource Include="Images\3Deck3_90.png" />
+    <Resource Include="Images\4Deck1_90.png" />
+    <Resource Include="Images\4Deck2_90.png" />
+    <Resource Include="Images\4Deck3_90.png" />
+    <Resource Include="Images\4Deck4_90.png" />
+    <Resource Include="Images\Rotate.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,11 +69,13 @@
     <Resource Include="Images\4Deck3.png" />
     <Resource Include="Images\4Deck4.png" />
     <Resource Include="Images\Cloud.png" />
+    <Resource Include="Images\Rotate_90.png.png" />
     <Resource Include="Images\Ship.png" />
     <Resource Include="Images\Ship1.png" />
     <Resource Include="Images\Ship2.png" />
     <Resource Include="Images\Ship3.png" />
     <Resource Include="Images\Ship4.png" />
+    <Resource Include="Images\Ship_90.png" />
     <Resource Include="Images\Wave.png" />
   </ItemGroup>
 

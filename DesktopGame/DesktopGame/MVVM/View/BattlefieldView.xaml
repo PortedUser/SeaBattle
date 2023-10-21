@@ -104,7 +104,14 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Command="{Binding CurrentField.Commands[0].Command}" Content="{Binding CurrentField[0].CurrentImage}" Grid.Row="0" Grid.Column="0" Style="{StaticResource BattlefieldCell}"/>
+                <Button Command="{Binding CurrentField.Commands[0].Command}" 
+                        Content="{Binding CurrentField[0].CurrentImage}" 
+                        Grid.Row="0" Grid.Column="0" 
+                        Style="{StaticResource BattlefieldCell}">
+                    <Button.RenderTransform>
+                        <RotateTransform Angle="{Binding CurrentField[0].Angle}"/>
+                    </Button.RenderTransform>
+                </Button>
                 <Button Command="{Binding CurrentField.Commands[1].Command}" Content="{Binding CurrentField[1].CurrentImage}" Grid.Row="0" Grid.Column="1" Style="{StaticResource BattlefieldCell}"/>
                 <Button Command="{Binding CurrentField.Commands[2].Command}" Content="{Binding CurrentField[2].CurrentImage}" Grid.Row="0" Grid.Column="2" Style="{StaticResource BattlefieldCell}"/>
                 <Button Command="{Binding CurrentField.Commands[3].Command}" Content="{Binding CurrentField[3].CurrentImage}" Grid.Row="0" Grid.Column="3" Style="{StaticResource BattlefieldCell}"/>
