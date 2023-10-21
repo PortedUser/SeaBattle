@@ -54,6 +54,11 @@ namespace DesktopGame.MVVM.Model
                 this[x, y].SetFullState(StateCell.Deck2_1);
                 this[x , y + 1 ].SetFullState(StateCell.Deck2_2);
             }
+            else if (x + 1 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck2_1_90);
+                this[x + 1, y].SetFullState(StateCell.Deck2_2_90);
+            }
         }
 
         private void SetThreeShip(BattleCommand cm, int angle)
@@ -65,6 +70,11 @@ namespace DesktopGame.MVVM.Model
                 this[x, y].SetFullState(StateCell.Deck3_1);
                 this[x, y + 1].SetFullState(StateCell.Deck3_2);
                 this[x, y + 2].SetFullState(StateCell.Deck3_3);
+            }else if (x + 2 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck3_1_90);
+                this[x + 1, y].SetFullState(StateCell.Deck3_2_90);
+                this[x + 2, y].SetFullState(StateCell.Deck3_3_90);
             }
         }
 
@@ -78,6 +88,12 @@ namespace DesktopGame.MVVM.Model
                 this[x, y + 1].SetFullState(StateCell.Deck4_2);
                 this[x, y + 2].SetFullState(StateCell.Deck4_3);
                 this[x, y + 3].SetFullState(StateCell.Deck4_4);
+            }else if(x + 3 < 10)
+            {
+                this[x, y].SetFullState(StateCell.Deck4_1_90);
+                this[x + 1, y].SetFullState(StateCell.Deck4_2_90);
+                this[x + 2, y].SetFullState(StateCell.Deck4_3_90);
+                this[x + 3, y].SetFullState(StateCell.Deck4_4_90);
             }
         }
 
@@ -88,7 +104,7 @@ namespace DesktopGame.MVVM.Model
                 this[cm.X, cm.Y].SetFullState(StateCell.BowShip);
             }else if (true)
             {
-
+                this[cm.X, cm.Y].SetFullState(StateCell.BowShip_90);
             }
             
         }

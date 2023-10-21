@@ -18,11 +18,19 @@ namespace DesktopGame.MVVM.ViewModel
         private BitmapImage _threeShipSetter;
         private BitmapImage _fourShipSetter;
         private StateShip _lastStateShip;
+        private BattlefieldCell _rotate;
 
         public RelayCommand SetBowShip { get; private set; }
         public RelayCommand SetDoubleShip { get; private set; }
         public RelayCommand SetThreeShip { get; private set; }
         public RelayCommand SetFourShip { get; private set; }
+        public RelayCommand SetRotate { get; private set; }
+
+        public BattlefieldCell Rotate
+        {
+            get { return _rotate; }
+            set { _rotate = value;  OnPropertyChanged(); }
+        }
 
         public StateShip LastStateShip
         {
@@ -60,25 +68,36 @@ namespace DesktopGame.MVVM.ViewModel
             _threeShipSetter = new BitmapImage(GetUri(TypeShip.ThreeDeckShip));
             _fourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
             LastStateShip = new StateShip(TypeShip.BowShip);
+            Rotate = new BattlefieldCell(0, 0);
+            Rotate.SetFullState(StateCell.Rotate);
 
             SetBowShip = new RelayCommand(o => 
             { 
-                LastStateShip = new StateShip(TypeShip.BowShip);
+                LastStateShip.CurrentType = TypeShip.BowShip;
             });
 
             SetDoubleShip = new RelayCommand(o =>
             {
-                LastStateShip = new StateShip(TypeShip.DoubleDeckShip);
+                LastStateShip.CurrentType = TypeShip.DoubleDeckShip;
             });
 
             SetThreeShip = new RelayCommand(o =>
             {
-                LastStateShip = new StateShip(TypeShip.ThreeDeckShip);
+                LastStateShip.CurrentType = TypeShip.ThreeDeckShip;
             });
 
             SetFourShip = new RelayCommand(o =>
             {
-                LastStateShip = new StateShip(TypeShip.FourDeckShip);
+                LastStateShip.CurrentType = TypeShip.FourDeckShip;
+            });
+
+            SetRotate = new RelayCommand(o =>
+            {
+                LastStateShip.AngleRotation = LastStateShip.AngleRotation == 0 ? 90 : 0;
+                if (Rotate.CurrentState == StateCell.Rotate)
+                    Rotate.SetFullState(StateCell.Rotate_90);
+                else
+                    Rotate.SetFullState(StateCell.Rotate);
             });
         }
 
