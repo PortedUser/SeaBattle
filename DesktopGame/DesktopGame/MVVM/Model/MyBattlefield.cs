@@ -15,9 +15,10 @@ namespace DesktopGame.MVVM.Model
     {
         private BattlefieldViewModel _parentVM;
         private StateCell _baseStateCell;
+        private FieldDictionary _fieldDictionary;
+
         public MyBattlefield() : base()
         {
-
             foreach (var cm in Commands)
             {
                 cm.Command = new RelayCommand(o =>
@@ -52,11 +53,13 @@ namespace DesktopGame.MVVM.Model
             {
                 this[x, y].SetFullState(StateCell.Deck2_1);
                 this[x , y + 1 ].SetFullState(StateCell.Deck2_2);
+                _fieldDictionary.AddDoubleShip(x, y, angle);
             }
             else if (x + 1 < 10 && CheckSpace(1,0,x,y) && angle == 90)
             {
                 this[x, y].SetFullState(StateCell.Deck2_1_90);
                 this[x + 1, y].SetFullState(StateCell.Deck2_2_90);
+                _fieldDictionary.AddDoubleShip(x, y, angle);
             }
         }
 
@@ -69,11 +72,13 @@ namespace DesktopGame.MVVM.Model
                 this[x, y].SetFullState(StateCell.Deck3_1);
                 this[x, y + 1].SetFullState(StateCell.Deck3_2);
                 this[x, y + 2].SetFullState(StateCell.Deck3_3);
+                _fieldDictionary.AddThreeShip(x, y, angle); 
             }else if (x + 2 < 10 && CheckSpace(2,0,x,y) && angle == 90)
             {
                 this[x, y].SetFullState(StateCell.Deck3_1_90);
                 this[x + 1, y].SetFullState(StateCell.Deck3_2_90);
                 this[x + 2, y].SetFullState(StateCell.Deck3_3_90);
+                _fieldDictionary.AddThreeShip(x, y, angle);
             }
         }
 
@@ -87,23 +92,27 @@ namespace DesktopGame.MVVM.Model
                 this[x, y + 1].SetFullState(StateCell.Deck4_2);
                 this[x, y + 2].SetFullState(StateCell.Deck4_3);
                 this[x, y + 3].SetFullState(StateCell.Deck4_4);
+                _fieldDictionary.AddFourShip(x, y, angle);
             }else if(x + 3 < 10 && CheckSpace(3, 0, x, y) && angle == 90)
             {
                 this[x, y].SetFullState(StateCell.Deck4_1_90);
                 this[x + 1, y].SetFullState(StateCell.Deck4_2_90);
                 this[x + 2, y].SetFullState(StateCell.Deck4_3_90);
                 this[x + 3, y].SetFullState(StateCell.Deck4_4_90);
+                _fieldDictionary.AddFourShip(x, y, angle);
             }
         }
 
         private void SetBowShip(BattleCommand cm, int angle)
         {
-            if (angle == 0)
+            if (angle == 0 && CheckArea(cm.X, cm.Y))
             {
                 this[cm.X, cm.Y].SetFullState(StateCell.BowShip);
-            }else if ( angle == 90)
+                _fieldDictionary.AddBowShip(cm.X, cm.Y);
+            }else if ( angle == 90 && CheckArea(cm.X, cm.Y))
             {
                 this[cm.X, cm.Y].SetFullState(StateCell.BowShip_90);
+                _fieldDictionary.AddBowShip(cm.X, cm.Y);
             }
             
         }
@@ -111,6 +120,7 @@ namespace DesktopGame.MVVM.Model
         public void CreateField()
         {
             _baseStateCell = StateCell.Wave;
+            _fieldDictionary = new FieldDictionary();
 
             foreach (BattlefieldCell item in this)
             {
