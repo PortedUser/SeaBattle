@@ -64,7 +64,7 @@ namespace DesktopGame.MVVM.Model
         public void AddDoubleShip(int x, int y, int angle)
         {
             _doubleShip.Add(new List<Point>());
-            var number = _bowShip.Count - 1;
+            var number = _doubleShip.Count - 1;
 
             if (angle == 0)
             {

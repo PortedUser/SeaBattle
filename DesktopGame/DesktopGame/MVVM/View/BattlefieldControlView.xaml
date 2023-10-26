@@ -75,6 +75,11 @@
                     Content="{Binding Rotate.CurrentImage}"
                     Style="{StaticResource BattlefieldCell}"
                     Margin="10"/>
+
+            <Button Command="{Binding SetDelete}"
+                    Style="{StaticResource BattlefieldCell}"
+                    Content="{Binding Delete.CurrentImage}"
+                    Margin="10"/>
         </StackPanel>
         
     </Grid>

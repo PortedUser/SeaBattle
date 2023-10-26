@@ -12,6 +12,7 @@ namespace DesktopGame.Domain.Enum
         Wave,
         Cloud,
         Explosion,
+        Delete,
 
         BowShip,
         Deck2_1,

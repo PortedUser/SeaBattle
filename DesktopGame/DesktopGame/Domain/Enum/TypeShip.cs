@@ -11,6 +11,7 @@ namespace DesktopGame.Domain.Enum
         BowShip,
         DoubleDeckShip,
         ThreeDeckShip,
-        FourDeckShip
+        FourDeckShip,
+        Delete
     }
 }

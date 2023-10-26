@@ -19,12 +19,22 @@ namespace DesktopGame.MVVM.ViewModel
         private BitmapImage _fourShipSetter;
         private StateShip _lastStateShip;
         private BattlefieldCell _rotate;
+        private BattlefieldCell _delete;
 
         public RelayCommand SetBowShip { get; private set; }
         public RelayCommand SetDoubleShip { get; private set; }
         public RelayCommand SetThreeShip { get; private set; }
         public RelayCommand SetFourShip { get; private set; }
         public RelayCommand SetRotate { get; private set; }
+        public RelayCommand SetDelete { get; private set; }
+
+
+        public BattlefieldCell Delete
+        {
+            get { return _delete; }
+            set { _delete = value; OnPropertyChanged(); }
+        }
+
 
         public BattlefieldCell Rotate
         {
@@ -69,6 +79,8 @@ namespace DesktopGame.MVVM.ViewModel
             _fourShipSetter = new BitmapImage(GetUri(TypeShip.FourDeckShip));
             LastStateShip = new StateShip(TypeShip.BowShip);
             Rotate = new BattlefieldCell(0, 0);
+            Delete = new BattlefieldCell(0, 0);
+            Delete.SetFullState(StateCell.Delete);
             Rotate.SetFullState(StateCell.Rotate);
 
             SetBowShip = new RelayCommand(o => 
@@ -90,6 +102,13 @@ namespace DesktopGame.MVVM.ViewModel
             {
                 LastStateShip.CurrentType = TypeShip.FourDeckShip;
             });
+
+            SetDelete = new RelayCommand(o =>
+            {
+                LastStateShip.CurrentType = TypeShip.Delete;
+            });
+
+
 
             SetRotate = new RelayCommand(o =>
             {

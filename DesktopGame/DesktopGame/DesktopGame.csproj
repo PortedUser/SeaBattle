@@ -27,6 +27,7 @@
     <None Remove="Images\4Deck4.png" />
     <None Remove="Images\4Deck4_90.png" />
     <None Remove="Images\Cloud.png" />
+    <None Remove="Images\Delete.png" />
     <None Remove="Images\Rotate.png" />
     <None Remove="Images\Rotate_90.png.png" />
     <None Remove="Images\Ship.png" />
@@ -48,6 +49,7 @@
     <Resource Include="Images\4Deck2_90.png" />
     <Resource Include="Images\4Deck3_90.png" />
     <Resource Include="Images\4Deck4_90.png" />
+    <Resource Include="Images\Delete.png" />
     <Resource Include="Images\Rotate.png" />
   </ItemGroup>
 
