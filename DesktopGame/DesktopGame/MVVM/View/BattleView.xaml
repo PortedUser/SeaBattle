@@ -14,7 +14,8 @@
             BorderBrush="#08BECF">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -33,6 +34,9 @@
                          Grid.Column="0"
                          Grid.Row="1"/>
 
+            <Button Grid.Row="2"
+                    Content="Начать игру"
+                    Command="{Binding StartGame}"/>
         </Grid>
     </Border>
     

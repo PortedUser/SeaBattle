@@ -17,6 +17,16 @@ namespace DesktopGame.MVVM.Model
         private StateCell _baseStateCell;
         private FieldDictionary _fieldDictionary;
 
+        public bool FieldFilled { 
+            get 
+            {
+                return _fieldDictionary.BowShipIsFull 
+                    && _fieldDictionary.DoubleShipIsFull 
+                    && _fieldDictionary.FourShipIsFull
+                    && _fieldDictionary.ThreeShipIsFull;    
+            } 
+        }
+
         public MyBattlefield() : base()
         {
             _fieldDictionary = new FieldDictionary();

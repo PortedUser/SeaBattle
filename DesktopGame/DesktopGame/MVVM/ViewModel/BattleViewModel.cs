@@ -16,6 +16,8 @@ namespace DesktopGame.MVVM.ViewModel
         private BattlefieldViewModel _enemyBattleField;
         private BattlefieldControlViewModel _controlVM;
 
+        public RelayCommand StartGame { get; set; }
+
         public BattlefieldViewModel MyField
         {
             get { return _myBattleField; }
@@ -46,6 +48,12 @@ namespace DesktopGame.MVVM.ViewModel
             EnemyField.SetParentVM(this);
 
             ControlVM = new BattlefieldControlViewModel();
+
+            StartGame = new RelayCommand(o =>
+            {
+                MyField.StartGame();
+                EnemyField.StartGame();
+            });
         }
 
         public StateShip GetLastSetState()

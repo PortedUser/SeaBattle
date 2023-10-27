@@ -16,6 +16,8 @@ namespace DesktopGame.MVVM.Model
 
         }
 
+        public bool FieldFilled => true;
+
         public void CreateField()
         {
             foreach (BattlefieldCell item in this)

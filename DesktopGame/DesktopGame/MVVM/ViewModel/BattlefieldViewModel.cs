@@ -14,6 +14,7 @@ namespace DesktopGame.MVVM.ViewModel
     {
         private IPlayingField _curField;
         private BattleViewModel _parentVM;
+        private TypeField _type;
 
         public IPlayingField CurrentField
         {
@@ -30,6 +31,7 @@ namespace DesktopGame.MVVM.ViewModel
         {
             if (type == TypeField.EnemyField)
             {
+                _type = type;
                 CurrentField = new EnemyBattlefield();
                 CurrentField.CreateField();
                 CurrentField.SetParentVM(this);
@@ -37,10 +39,24 @@ namespace DesktopGame.MVVM.ViewModel
             }
             else if (type == TypeField.MyField)
             {
+                _type = type;
                 CurrentField = new MyBattlefield();
                 CurrentField.CreateField();
                 CurrentField.SetParentVM(this);
                 OnPropertyChanged();
+            }
+        }
+
+        public void StartGame()
+        {
+            if (_type == TypeField.MyField && CurrentField.FieldFilled)
+            {
+                CurrentField = new MyFieldActiveGame(CurrentField);
+                OnPropertyChanged(nameof(CurrentField));
+            }
+            else if (_type == TypeField.EnemyField)
+            {
+
             }
         }
 

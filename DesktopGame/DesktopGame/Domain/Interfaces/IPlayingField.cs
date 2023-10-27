@@ -16,5 +16,7 @@ namespace DesktopGame.Domain.Interfaces
         public void CreateField();
         public BattlefieldCell this[int index] { get; set; }
         public BindingList<BattleCommand> Commands { get; set; }
+
+        public bool FieldFilled { get; }
     }
 }
