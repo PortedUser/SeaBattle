@@ -15,6 +15,11 @@ namespace DesktopGame.MVVM.Model
         private List<List<Point>> _threeShip;
         private List<List<Point>> _fourShip;
 
+        public bool BowShipIsFull { get { return _bowShip.Count == 4; } }
+        public bool DoubleShipIsFull { get { return _doubleShip.Count == 3; } }
+        public bool ThreeShipIsFull { get { return _threeShip.Count == 2; } }
+        public bool FourShipIsFull { get { return _fourShip.Count == 1; } }
+
         public FieldDictionary() 
         { 
             _bowShip = new List<List<Point>>();

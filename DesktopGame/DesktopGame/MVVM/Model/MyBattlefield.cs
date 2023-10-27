@@ -19,29 +19,47 @@ namespace DesktopGame.MVVM.Model
 
         public MyBattlefield() : base()
         {
+            _fieldDictionary = new FieldDictionary();
             foreach (var cm in Commands)
             {
                 cm.Command = new RelayCommand(o =>
                 {
                     var state = GetLastSetState();
+                   
 
-                    if (state.CurrentType == TypeShip.BowShip)
+                    if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
                     {
                         SetBowShip(cm, state.AngleRotation);
                     }
-                    else if (state.CurrentType == TypeShip.DoubleDeckShip)
+                    else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
                     {
                         SetDoubleShip(cm, state.AngleRotation);
                     }
-                    else if (state.CurrentType == TypeShip.ThreeDeckShip)
+                    else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
                     {
                         SetThreeShip(cm, state.AngleRotation);
                     }
-                    else if (state.CurrentType == TypeShip.FourDeckShip)
+                    else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
                     {
                         SetFourShip(cm, state.AngleRotation);
                     }
+                    else if (state.CurrentType == TypeShip.Delete)
+                    {
+                        DeleteShip(cm);
+                    }
                 });
+            }
+        }
+
+        private void DeleteShip(BattleCommand cm)
+        {
+            var ship = _fieldDictionary.GetAndDelPosShip(cm.X, cm.Y);
+            if (ship != null)
+            {
+                foreach (var point in ship)
+                {
+                    this[point.X, point.Y].SetFullState(_baseStateCell);
+                }
             }
         }
 
@@ -120,7 +138,6 @@ namespace DesktopGame.MVVM.Model
         public void CreateField()
         {
             _baseStateCell = StateCell.Wave;
-            _fieldDictionary = new FieldDictionary();
 
             foreach (BattlefieldCell item in this)
             {

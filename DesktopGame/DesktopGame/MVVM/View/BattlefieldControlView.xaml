@@ -23,6 +23,7 @@
 
         <Border Grid.Row="0"
                 Grid.Column="0">
+            
             <StackPanel>
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
@@ -81,6 +82,6 @@
                     Content="{Binding Delete.CurrentImage}"
                     Margin="10"/>
         </StackPanel>
-        
+
     </Grid>
 </UserControl>
