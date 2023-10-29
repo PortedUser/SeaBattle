@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Enum
 {
-    enum TypeShip
+    enum TypeShip : int
     {
-        BowShip,
-        DoubleDeckShip,
-        ThreeDeckShip,
-        FourDeckShip,
-        Delete
+        BowShip = 10,
+        DoubleDeckShip = 20,
+        ThreeDeckShip = 30,
+        FourDeckShip = 40,
+        Delete = 0
     }
 }
