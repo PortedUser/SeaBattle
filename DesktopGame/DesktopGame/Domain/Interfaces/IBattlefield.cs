@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DesktopGame.MVVM.Model;
+using DesktopGame.MVVM.Model.BattlefieldModel;
 
 namespace DesktopGame.Domain.Interfaces
 {

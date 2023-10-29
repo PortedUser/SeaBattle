@@ -1,5 +1,5 @@
 ﻿using DesktopGame.Core;
-using DesktopGame.MVVM.Model;
+using DesktopGame.MVVM.Model.BattlefieldModel;
 using DesktopGame.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;

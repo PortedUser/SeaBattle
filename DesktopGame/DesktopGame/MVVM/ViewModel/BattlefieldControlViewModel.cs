@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using DesktopGame.Core;
 using DesktopGame.Domain.Enum;
 using DesktopGame.MVVM.Model;
+using DesktopGame.MVVM.Model.BattlefieldModel;
 
 namespace DesktopGame.MVVM.ViewModel
 {
