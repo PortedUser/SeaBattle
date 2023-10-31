@@ -14,6 +14,7 @@ namespace DesktopGame.MVVM.Model
         private List<List<Point>> _doubleShip;
         private List<List<Point>> _threeShip;
         private List<List<Point>> _fourShip;
+        private List<List<Point>>[] _ships;
 
         public bool BowShipIsFull { get { return _bowShip.Count == 4; } }
         public bool DoubleShipIsFull { get { return _doubleShip.Count == 3; } }
@@ -26,23 +27,26 @@ namespace DesktopGame.MVVM.Model
             _doubleShip = new List<List<Point>>();
             _threeShip = new List<List<Point>>();
             _fourShip = new List<List<Point>>();
+
+            _ships = new List<List<Point>>[4];
+            _ships[0] = _bowShip;
+            _ships[1] = _doubleShip;
+            _ships[2] = _threeShip;
+            _ships[3] = _fourShip;
         }
 
         public List<Point> GetAndDelPosShip(int x, int y) 
         {
-            var res = SearchShip(_bowShip ,x, y);
-            if (res != null) { _bowShip.Remove(res); return res; }
-
-            res = SearchShip(_doubleShip ,x, y);
-            if(res != null) { _doubleShip.Remove(res); return res; }
-
-            res = SearchShip(_threeShip ,x, y);
-            if ( res != null){ _threeShip.Remove(res); return res; }
-
-            res = SearchShip(_fourShip ,x, y);
-            if (res != null) { _fourShip.Remove(res); return res; }
-
-            return res;
+            foreach (var item in _ships)
+            {
+                var res = SearchShip(item, x, y);
+                if (res != null)
+                {
+                    item.Remove(res);
+                    return res;
+                }
+            }
+            return null;
         }
 
         private List<Point> SearchShip(List<List<Point>> ships, int x, int y)
@@ -58,6 +62,38 @@ namespace DesktopGame.MVVM.Model
                 }
             }
             return null;
+        }
+
+        public void AddShip(int x, int y, StateShip state)
+        {
+
+            var shiftModulusX = state.AngleRotation == AngleOfRotation.Angle_90 ? 1 : 0;
+            var shiftModulusY = state.AngleRotation == AngleOfRotation.Angle_0 ? 1 : 0;
+
+            var lengthShip = (int)state.CurrentType / 10;
+            var currList = _ships[lengthShip - 1];
+
+            var shiftX = GetShift(lengthShip, shiftModulusX);
+            var shiftY = GetShift(lengthShip, shiftModulusY);
+
+            var finX = x + shiftX;
+            var finY = y + shiftY;
+
+            currList.Add(new List<Point>());
+            var numbItem = currList.Count - 1;
+
+            for (int i = 0; i < lengthShip; i++)
+            {
+                var currX = x + i * shiftModulusX;
+                var currY = y + i * shiftModulusY;
+
+                currList[numbItem].Add(new Point(currX, currY));
+            }
+        }
+
+        private int GetShift(int length, int modulus)
+        {
+            return (length - 1) * modulus;
         }
 
         public void AddBowShip(int x, int y)

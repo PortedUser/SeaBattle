@@ -8,7 +8,7 @@ namespace DesktopGame.Domain.Enum
 {
     public enum AngleOfRotation
     {
-        Angle_0,
-        Angle_90
+        Angle_0 =0,
+        Angle_90=90
     }
 }

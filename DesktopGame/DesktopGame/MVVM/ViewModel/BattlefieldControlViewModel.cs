@@ -113,7 +113,9 @@ namespace DesktopGame.MVVM.ViewModel
 
             SetRotate = new RelayCommand(o =>
             {
-                LastStateShip.AngleRotation = LastStateShip.AngleRotation == 0 ? 90 : 0;
+                LastStateShip.AngleRotation = LastStateShip.AngleRotation == AngleOfRotation.Angle_0 
+                ? AngleOfRotation.Angle_90 : AngleOfRotation.Angle_0;
+
                 if (Rotate.CurrentState == StateCell.Rotate)
                     Rotate.SetFullState(StateCell.Rotate_90);
                 else
