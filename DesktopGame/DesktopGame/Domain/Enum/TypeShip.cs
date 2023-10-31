@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Enum
 {
-    enum TypeShip : int
+    public enum TypeShip : int
     {
         BowShip = 10,
         DoubleDeckShip = 20,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Enum
 {
-    enum AngleOfRotation
+    public enum AngleOfRotation
     {
         Angle_0,
         Angle_90

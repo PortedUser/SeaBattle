@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Enum
 {
-    enum StateCell : int
+    public enum StateCell : int
     {
         None =0,
         Wave =1,

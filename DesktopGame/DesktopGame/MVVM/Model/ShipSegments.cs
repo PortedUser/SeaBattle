@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace DesktopGame.MVVM.Model
 {
-    class ShipSegments
+    public class ShipSegments
     {
         private Dictionary<TypeShip, Dictionary<int, Dictionary<AngleOfRotation, StateCell>>> _segments; 
         public ShipSegments() 
@@ -23,8 +23,13 @@ namespace DesktopGame.MVVM.Model
         public StateCell this[TypeShip type, AngleOfRotation angle, int numberSegment]
         {
             get 
-            { 
-                return _segments[type][numberSegment][angle];
+            {
+                if (_segments.ContainsKey(type))
+                    if (_segments[type].ContainsKey(numberSegment))
+                        if (_segments[type][numberSegment].ContainsKey(angle))
+                            return _segments[type][numberSegment][angle];
+
+                return StateCell.None;
             }
         }
 
