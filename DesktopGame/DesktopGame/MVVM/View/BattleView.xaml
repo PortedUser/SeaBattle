@@ -34,9 +34,16 @@
                          Grid.Column="0"
                          Grid.Row="1"/>
 
-            <Button Grid.Row="2"
-                    Content="Начать игру"
-                    Command="{Binding StartGame}"/>
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="2"
+                        Margin="20,10,5,10">
+                
+                <Button  Content="{Binding GameState}"
+                         Command="{Binding SwitchStateGame}"
+                         />
+                
+            </StackPanel>
+            
         </Grid>
     </Border>
     

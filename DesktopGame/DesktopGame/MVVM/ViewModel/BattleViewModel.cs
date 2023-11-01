@@ -16,8 +16,9 @@ namespace DesktopGame.MVVM.ViewModel
         private BattlefieldViewModel _myBattleField;
         private BattlefieldViewModel _enemyBattleField;
         private BattlefieldControlViewModel _controlVM;
-
-        public RelayCommand StartGame { get; set; }
+        private bool _gameIsActive;
+        public string GameState { get; set; }
+        public RelayCommand SwitchStateGame { get; set; }
 
         public BattlefieldViewModel MyFieldVM
         {
@@ -40,29 +41,49 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BattleViewModel() 
         {
-            MyFieldVM = new BattlefieldViewModel();
-            MyFieldVM.CreateField(TypeField.MyField);
-            MyFieldVM.SetParentVM(this);
-
-            EnemyFieldVM = new BattlefieldViewModel();
-            EnemyFieldVM.CreateField(TypeField.EnemyField);
-            EnemyFieldVM.SetParentVM(this);
-
+            
+            MyFieldVM = new BattlefieldViewModel(TypeField.MyField, this);
+            EnemyFieldVM = new BattlefieldViewModel(TypeField.EnemyField, this);
             ControlVM = new BattlefieldControlViewModel();
 
-            StartGame = new RelayCommand(o =>
+            StopGame();
+
+            SwitchStateGame = new RelayCommand(o =>
             {
-                if (MyFieldVM.Filled && EnemyFieldVM.Filled)
+                if (!_gameIsActive)
                 {
-                    MyFieldVM.StartGame();
-                    EnemyFieldVM.StartGame();
+                    StartGame();
                 }
                 else
                 {
-                    MessageBox.Show("Игровое поле не готово");
+                    StopGame();
                 }
-                
             });
+        }
+
+        private void StartGame()
+        {
+            if (MyFieldVM.Filled && EnemyFieldVM.Filled)
+            {
+                MyFieldVM.StartGame();
+                EnemyFieldVM?.StartGame();
+                _gameIsActive = true;
+                GameState = "Закончить игру";
+                OnPropertyChanged(nameof(GameState));
+            }
+            else
+            {
+                MessageBox.Show("Поле не готово");
+            }
+        }
+
+        private void StopGame()
+        {
+            _gameIsActive = false;
+            MyFieldVM.StopGame();
+            EnemyFieldVM.StopGame();
+            GameState = "Начать игру";
+            OnPropertyChanged(nameof(GameState));
         }
 
         public StateShip GetLastSetState()
