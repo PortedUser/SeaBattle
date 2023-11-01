@@ -27,8 +27,16 @@ namespace DesktopGame.MVVM.Model
             } 
         }
 
-        public MyBattlefield() : base()
+        public MyBattlefield(BattlefieldViewModel vm) : base()
         {
+            _parentVM = vm;
+            _baseStateCell = StateCell.Wave;
+
+            foreach (BattlefieldCell item in this)
+            {
+                item.SetFullState(_baseStateCell);
+            }
+
             _fieldDictionary = new FieldDictionary();
             foreach (var cm in Commands)
             {
@@ -39,19 +47,19 @@ namespace DesktopGame.MVVM.Model
 
                     if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
                     {
-                        SetShip(cm, state);
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
                     }
                     else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
                     {
-                        SetShip(cm, state);
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
                     }
                     else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
                     {
-                        SetShip(cm, state);
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
                     }
                     else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
                     {
-                        SetShip(cm, state);
+                        SetShip(cm, state,_fieldDictionary, _baseStateCell);
                     }
                     else if (state.CurrentType == TypeShip.Delete)
                     {
@@ -61,43 +69,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        private void SetShip(BattleCommand cm, StateShip state)
-        {
-            var x = cm.X;
-            var y = cm.Y;
-
-            var shiftModulusX = state.AngleRotation == AngleOfRotation.Angle_90 ? 1 : 0;
-            var shiftModulusY = state.AngleRotation == AngleOfRotation.Angle_0 ? 1 : 0;
-
-            var lengthShip = (int)state.CurrentType / 10;
-
-            var shiftX = GetShift(lengthShip, shiftModulusX);
-            var shiftY = GetShift(lengthShip, shiftModulusY);
-
-            var finX = x + shiftX;
-            var finY = y + shiftY;
-
-            var segementManager = new ShipSegments();
-            
-
-            if (finX < 10 && finY < 10 && CheckSpace(shiftX, shiftY, x, y))
-            {
-                _fieldDictionary.AddShip(x, y, state);
-                for (int i = 0; i < lengthShip; i++)
-                {
-                    var currX = x + i * shiftModulusX;
-                    var currY = y + i * shiftModulusY;
-
-                    var newState = segementManager[state.CurrentType, state.AngleRotation, i];
-                    this[currX, currY].SetFullState(newState);
-                }
-            }
-        }
-
-        private int GetShift(int length, int modulus)
-        {
-            return (length - 1) * modulus;
-        }
+        
 
         private void DeleteShip(BattleCommand cm)
         {
@@ -111,61 +83,12 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public void CreateField()
-        {
-            _baseStateCell = StateCell.Wave;
-
-            foreach (BattlefieldCell item in this)
-            {
-                item.SetFullState(_baseStateCell);
-            }
-        }
-
-        public void SetParentVM(BattlefieldViewModel vm)
-        {
-            _parentVM = vm;
-        }
-
         private StateShip GetLastSetState()
         {
             return _parentVM.GetLastSetState();
         }
 
 
-        private bool CheckSpace(int shiftX, int shiftY, int x, int y)
-        {
-            shiftX += x;
-            shiftY += y;
-            for (var iX = x; iX <= shiftX; iX++)
-            {
-                for (var iY = y; iY <= shiftY; iY++)
-                {
-                    var res = CheckArea(iX, iY);
-                    if (!res)
-                        return res;
-                }
-            }
-            return true;
-        }
-
-        private bool CheckArea(int x, int y)
-        {
-            for (int i = -1; i <= 1; i++)
-            {
-                for (int j = -1; j <= 1; j++)
-                {
-                    var X = x + i;
-                    var Y = y + j;
-                    if (X < 10 && Y < 10 && X > -1 && Y > -1)
-                    {
-                        if (this[X, Y].CurrentState != _baseStateCell)
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
-        }
+        
     }
 }

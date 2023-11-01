@@ -13,13 +13,6 @@ namespace DesktopGame.MVVM.Model
     class EnemyBattlefield : BaseBattlefield, IPlayingField
     {
         public EnemyBattlefield() : base()
-        { 
-
-        }
-
-        public bool FieldFilled => true;
-
-        public void CreateField()
         {
             foreach (BattlefieldCell item in this)
             {
@@ -27,9 +20,6 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public void SetParentVM(BattlefieldViewModel vm)
-        {
-            
-        }
+        public bool FieldFilled => true;
     }
 }

@@ -2,6 +2,7 @@
 using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model;
+using DesktopGame.MVVM.Model.BattlefieldModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,24 +27,18 @@ namespace DesktopGame.MVVM.ViewModel
         {
             
         }
-
+        public bool Filled { get { return CurrentField.FieldFilled; } }
         public void CreateField(TypeField type)
         {
             if (type == TypeField.EnemyField)
             {
                 _type = type;
-                CurrentField = new EnemyBattlefield();
-                CurrentField.CreateField();
-                CurrentField.SetParentVM(this);
-                OnPropertyChanged();
+                CurrentField = new ComputerEnemyField();
             }
             else if (type == TypeField.MyField)
             {
                 _type = type;
-                CurrentField = new MyBattlefield();
-                CurrentField.CreateField();
-                CurrentField.SetParentVM(this);
-                OnPropertyChanged();
+                CurrentField = new MyBattlefield(this);
             }
         }
 

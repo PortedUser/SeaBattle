@@ -12,8 +12,6 @@ namespace DesktopGame.Domain.Interfaces
 {
     interface IPlayingField
     {
-        public void SetParentVM(BattlefieldViewModel vm);
-        public void CreateField();
         public BattlefieldCell this[int index] { get; set; }
         public BindingList<BattleCommand> Commands { get; set; }
 

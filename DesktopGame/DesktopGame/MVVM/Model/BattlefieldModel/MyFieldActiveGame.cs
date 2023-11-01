@@ -20,16 +20,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public bool FieldFilled => true;
+        public bool FieldFilled => true; 
 
-        public void CreateField()
-        {
-            
-        }
-
-        public void SetParentVM(BattlefieldViewModel vm)
-        {
-
-        }
     }
 }

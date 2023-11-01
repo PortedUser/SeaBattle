@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DesktopGame.MVVM.ViewModel
 {
@@ -18,13 +19,13 @@ namespace DesktopGame.MVVM.ViewModel
 
         public RelayCommand StartGame { get; set; }
 
-        public BattlefieldViewModel MyField
+        public BattlefieldViewModel MyFieldVM
         {
             get { return _myBattleField; }
             set { _myBattleField = value; OnPropertyChanged(); }
         }
 
-        public BattlefieldViewModel EnemyField
+        public BattlefieldViewModel EnemyFieldVM
         {
             get { return _enemyBattleField; }
             set { _enemyBattleField = value; OnPropertyChanged(); }
@@ -39,20 +40,28 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BattleViewModel() 
         {
-            MyField = new BattlefieldViewModel();
-            MyField.CreateField(TypeField.MyField);
-            MyField.SetParentVM(this);
+            MyFieldVM = new BattlefieldViewModel();
+            MyFieldVM.CreateField(TypeField.MyField);
+            MyFieldVM.SetParentVM(this);
 
-            EnemyField = new BattlefieldViewModel();
-            EnemyField.CreateField(TypeField.EnemyField);
-            EnemyField.SetParentVM(this);
+            EnemyFieldVM = new BattlefieldViewModel();
+            EnemyFieldVM.CreateField(TypeField.EnemyField);
+            EnemyFieldVM.SetParentVM(this);
 
             ControlVM = new BattlefieldControlViewModel();
 
             StartGame = new RelayCommand(o =>
             {
-                MyField.StartGame();
-                EnemyField.StartGame();
+                if (MyFieldVM.Filled && EnemyFieldVM.Filled)
+                {
+                    MyFieldVM.StartGame();
+                    EnemyFieldVM.StartGame();
+                }
+                else
+                {
+                    MessageBox.Show("Игровое поле не готово");
+                }
+                
             });
         }
 
