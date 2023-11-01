@@ -14,7 +14,10 @@ namespace DesktopGame.Domain.Interfaces
     {
         public BattlefieldCell this[int index] { get; set; }
         public BindingList<BattleCommand> Commands { get; set; }
-
         public bool FieldFilled { get; }
+        public void StartGame();
+        public void StopGame();
+
+        public void Shoot(int x, int y);
     }
 }

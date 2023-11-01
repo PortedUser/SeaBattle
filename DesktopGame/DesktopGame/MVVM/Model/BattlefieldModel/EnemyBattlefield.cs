@@ -1,4 +1,5 @@
-﻿using DesktopGame.Domain.Enum;
+﻿using DesktopGame.Core;
+using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model.BattlefieldModel;
 using DesktopGame.MVVM.ViewModel;
@@ -21,5 +22,23 @@ namespace DesktopGame.MVVM.Model
         }
 
         public bool FieldFilled => true;
+
+        public void Shoot(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void StartGame()
+        {
+            //TODO
+        }
+
+        public void StopGame()
+        {
+            foreach (var cm in Commands)
+            {
+                cm.Command = new RelayCommand(o => { });
+            }
+        }
     }
 }

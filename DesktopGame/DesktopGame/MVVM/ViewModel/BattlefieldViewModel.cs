@@ -33,7 +33,7 @@ namespace DesktopGame.MVVM.ViewModel
             if (type == TypeField.EnemyField)
             {
                 _type = type;
-                CurrentField = new ComputerEnemyField();
+                CurrentField = new EnemyBattlefield();
             }
             else if (type == TypeField.MyField)
             {
@@ -44,15 +44,14 @@ namespace DesktopGame.MVVM.ViewModel
 
         public void StartGame()
         {
-            if (_type == TypeField.MyField && CurrentField.FieldFilled)
-            {
-                CurrentField = new MyFieldActiveGame(CurrentField);
-                OnPropertyChanged(nameof(CurrentField));
-            }
-            else if (_type == TypeField.EnemyField)
-            {
+            CurrentField.StartGame();
+            OnPropertyChanged(nameof(CurrentField));
+        }
 
-            }
+        public void StopGame()
+        {
+            CurrentField.StopGame();
+            OnPropertyChanged(nameof(CurrentField));
         }
 
         public void SetParentVM(BattleViewModel vm)

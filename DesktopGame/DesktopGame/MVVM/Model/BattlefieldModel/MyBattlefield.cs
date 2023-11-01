@@ -38,35 +38,8 @@ namespace DesktopGame.MVVM.Model
             }
 
             _fieldDictionary = new FieldDictionary();
-            foreach (var cm in Commands)
-            {
-                cm.Command = new RelayCommand(o =>
-                {
-                    var state = GetLastSetState();
-                   
 
-                    if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
-                    }
-                    else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
-                    }
-                    else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
-                    }
-                    else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
-                    {
-                        SetShip(cm, state,_fieldDictionary, _baseStateCell);
-                    }
-                    else if (state.CurrentType == TypeShip.Delete)
-                    {
-                        DeleteShip(cm);
-                    }
-                });
-            }
+            SetPlacementCommands();
         }
 
         
@@ -88,7 +61,54 @@ namespace DesktopGame.MVVM.Model
             return _parentVM.GetLastSetState();
         }
 
+        public void StartGame()
+        {
+            foreach (var cm in Commands)
+            {
+                cm.Command = new RelayCommand(o => { });
+            }
+        }
 
-        
+        public void StopGame()
+        {
+            SetPlacementCommands();
+        }
+
+        private void SetPlacementCommands()
+        {
+            foreach (var cm in Commands)
+            {
+                cm.Command = new RelayCommand(o =>
+                {
+                    var state = GetLastSetState();
+
+                    if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
+                    {
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                    }
+                    else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
+                    {
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                    }
+                    else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
+                    {
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                    }
+                    else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
+                    {
+                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                    }
+                    else if (state.CurrentType == TypeShip.Delete)
+                    {
+                        DeleteShip(cm);
+                    }
+                });
+            }
+        }
+
+        public void Shoot(int x, int y)
+        {
+            //TODO
+        }
     }
 }
