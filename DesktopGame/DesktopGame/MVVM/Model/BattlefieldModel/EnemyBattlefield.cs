@@ -37,12 +37,20 @@ namespace DesktopGame.MVVM.Model
 
         public void Shoot(int x, int y)
         {
-            throw new NotImplementedException();
+            Shoot(x, y, _baseState, _fieldDictionary);
         }
 
         public void StartGame()
         {
-            //TODO
+            foreach (var item in Commands)
+            {
+                item.Command = new RelayCommand(o =>
+                {
+                    var x = item.X;
+                    var y = item.Y;
+                    Shoot(x, y);
+                });
+            }
         }
 
         public void StopGame()

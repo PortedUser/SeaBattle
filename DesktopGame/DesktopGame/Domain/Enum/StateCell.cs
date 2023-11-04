@@ -13,6 +13,7 @@ namespace DesktopGame.Domain.Enum
         Cloud=2,
         Explosion=3,
         Delete =4,
+        Miss =5,
 
         BowShip = 10,
         Deck2_1 = 20,

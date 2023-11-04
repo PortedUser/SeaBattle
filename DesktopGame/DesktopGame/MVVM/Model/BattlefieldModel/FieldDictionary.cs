@@ -58,6 +58,19 @@ namespace DesktopGame.MVVM.Model
             return null;
         }
 
+        public List<Point> GetShip(int x, int y)
+        {
+            foreach (var item in _ships)
+            {
+                var res = SearchShip(item, x, y);
+                if (res != null)
+                {
+                    return res;
+                }
+            }
+            return null;
+        }
+
         private List<Point> SearchShip(List<List<Point>> ships, int x, int y)
         {
             foreach (List<Point> ship in ships)

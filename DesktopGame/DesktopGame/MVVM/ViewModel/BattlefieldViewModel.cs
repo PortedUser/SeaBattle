@@ -26,17 +26,9 @@ namespace DesktopGame.MVVM.ViewModel
         public BattlefieldViewModel(TypeField type, BattleViewModel vm) 
         {
             _parentVM = vm;
+            _type = type;
 
-            if (type == TypeField.EnemyField)
-            {
-                _type = type;
-                CurrentField = new EnemyBattlefield();
-            }
-            else if (type == TypeField.MyField)
-            {
-                _type = type;
-                CurrentField = new MyBattlefield(this);
-            }
+            SetField();
         }
 
         public bool Filled { get { return CurrentField.FieldFilled; } }
@@ -49,8 +41,20 @@ namespace DesktopGame.MVVM.ViewModel
 
         public void StopGame()
         {
-            CurrentField.StopGame();
+            SetField();
             OnPropertyChanged(nameof(CurrentField));
+        }
+
+        private void SetField()
+        {
+            if (_type == TypeField.EnemyField)
+            {
+                CurrentField = new EnemyBattlefield();
+            }
+            else if (_type == TypeField.MyField)
+            {
+                CurrentField = new MyBattlefield(this);
+            }
         }
 
         public StateShip GetLastSetState()

@@ -7,6 +7,7 @@ using DesktopGame.MVVM.Model.BattlefieldModel;
 using System.Linq;
 using System.Windows;
 using DesktopGame.Domain.Enum;
+using System.Collections.Generic;
 
 namespace DesktopGame.MVVM.Model
 {
@@ -108,6 +109,65 @@ namespace DesktopGame.MVVM.Model
                     yield return cell;
                 }
             }
+        }
+
+        public void Shoot(int x, int y, StateCell baseState, FieldDictionary fieldDictionary)
+        {
+            if (this[x, y].CurrentState == baseState)
+            {
+                this[x, y].SetFullState(StateCell.Miss);
+            }
+            else if (this[x, y].CurrentState != StateCell.Miss)
+            {
+                this[x, y].SetFullState(StateCell.Explosion);
+                var ship = fieldDictionary.GetShip(x, y);
+                if (ship != null)
+                {
+                    if (IsShipSunk(ship))
+                    {
+                        EncloseShip(ship, baseState);
+                    }
+                }
+            }
+        }
+
+        private void EncloseShip(List<Point> ship, StateCell baseState)
+        {
+            for (int i = 0; i < ship.Count; i++)
+            {
+                for(int xi = -1;  xi <= 1; xi++)
+                {
+                    for (int yi = -1; yi <= 1; yi++)
+                    {
+                        var currX = ship[i].X + xi;
+                        var currY = ship[i].Y + yi;
+                        SetMiss(currX, currY, baseState);                    
+                    }
+                }
+            }
+        }
+
+        private void SetMiss(int x, int y, StateCell baseState)
+        {
+            if (x < 10 && y < 10 && x > -1 && y > -1)
+            {
+                if (this[x,y].CurrentState == baseState)
+                {
+                    this[x, y].SetFullState(StateCell.Miss);
+                }
+            }
+        }
+
+        private bool IsShipSunk(List<Point> ship)
+        {
+            foreach (var point in ship)
+            {
+                if (this[point.X,point.Y].CurrentState != StateCell.Explosion)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void SetShip(BattleCommand cm, StateShip state, FieldDictionary _fieldDictionary, StateCell _baseStateCell)
