@@ -16,6 +16,7 @@ namespace DesktopGame.MVVM.Model
         private List<List<Point>> _fourShip;
         private List<List<Point>>[] _ships;
 
+        public bool IsFull { get { return BowShipIsFull && DoubleShipIsFull && ThreeShipIsFull && FourShipIsFull; } }
         public bool BowShipIsFull { get { return _bowShip.Count == 4; } }
         public bool DoubleShipIsFull { get { return _doubleShip.Count == 3; } }
         public bool ThreeShipIsFull { get { return _threeShip.Count == 2; } }
@@ -33,6 +34,14 @@ namespace DesktopGame.MVVM.Model
             _ships[1] = _doubleShip;
             _ships[2] = _threeShip;
             _ships[3] = _fourShip;
+        }
+
+        public void DeleteAll()
+        {
+            _bowShip.Clear();
+            _doubleShip.Clear();
+            _fourShip.Clear();
+            _threeShip.Clear();
         }
 
         public List<Point> GetAndDelPosShip(int x, int y) 

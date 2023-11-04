@@ -17,27 +17,18 @@ namespace DesktopGame.MVVM.Model
         private StateCell _baseStateCell;
         private FieldDictionary _fieldDictionary;
 
-        public bool FieldFilled { 
-            get 
-            {
-                return _fieldDictionary.BowShipIsFull 
-                    && _fieldDictionary.DoubleShipIsFull 
-                    && _fieldDictionary.FourShipIsFull
-                    && _fieldDictionary.ThreeShipIsFull;    
-            } 
-        }
+        public bool FieldFilled { get { return _fieldDictionary.IsFull; } }
 
         public MyBattlefield(BattlefieldViewModel vm) : base()
         {
             _parentVM = vm;
             _baseStateCell = StateCell.Wave;
+            _fieldDictionary = new FieldDictionary();
 
             foreach (BattlefieldCell item in this)
             {
                 item.SetFullState(_baseStateCell);
             }
-
-            _fieldDictionary = new FieldDictionary();
 
             SetPlacementCommands();
         }

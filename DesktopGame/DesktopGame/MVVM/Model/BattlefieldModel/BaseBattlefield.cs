@@ -143,6 +143,11 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
+        public void SetShip(int x, int y, StateShip state, FieldDictionary _fieldDictionary, StateCell _baseStateCell)
+        {
+            SetShip(new BattleCommand(x,y), state, _fieldDictionary, _baseStateCell);
+        }
+
         private int GetShift(int length, int modulus)
         {
             return (length - 1) * modulus;

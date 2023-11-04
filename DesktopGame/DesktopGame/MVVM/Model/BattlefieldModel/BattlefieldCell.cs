@@ -46,5 +46,12 @@ namespace DesktopGame.MVVM.Model.BattlefieldModel
 			var uriImage = new Uri(configManager.GetConfig(CurrentState.ToString()), UriKind.Relative);
 			CurrentImage = new BitmapImage(uriImage);
 		}
+
+		public void HideState(StateCell hideState)
+		{
+			var configManager = new ConfigManager();
+			var uriImage = new Uri(configManager.GetConfig(hideState.ToString()), UriKind.Relative);
+			CurrentImage = new BitmapImage(uriImage);
+		}
     }
 }
