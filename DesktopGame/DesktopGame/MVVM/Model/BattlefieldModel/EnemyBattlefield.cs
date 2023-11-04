@@ -125,5 +125,10 @@ namespace DesktopGame.MVVM.Model
             }
             _fieldDictionary.DeleteAll();
         }
+
+        public void SetStandbyMode()
+        {
+            StopGame();
+        }
     }
 }

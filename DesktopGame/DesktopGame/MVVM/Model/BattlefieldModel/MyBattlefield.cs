@@ -14,7 +14,7 @@ namespace DesktopGame.MVVM.Model
     class MyBattlefield : BaseBattlefield, IPlayingField
     {
         private BattlefieldViewModel _parentVM;
-        private StateCell _baseStateCell;
+        private StateCell _baseState;
         private FieldDictionary _fieldDictionary;
 
         public bool FieldFilled { get { return _fieldDictionary.IsFull; } }
@@ -22,12 +22,12 @@ namespace DesktopGame.MVVM.Model
         public MyBattlefield(BattlefieldViewModel vm) : base()
         {
             _parentVM = vm;
-            _baseStateCell = StateCell.Wave;
+            _baseState = StateCell.Wave;
             _fieldDictionary = new FieldDictionary();
 
             foreach (BattlefieldCell item in this)
             {
-                item.SetFullState(_baseStateCell);
+                item.SetFullState(_baseState);
             }
 
             SetPlacementCommands();
@@ -42,7 +42,7 @@ namespace DesktopGame.MVVM.Model
             {
                 foreach (var point in ship)
                 {
-                    this[point.X, point.Y].SetFullState(_baseStateCell);
+                    this[point.X, point.Y].SetFullState(_baseState);
                 }
             }
         }
@@ -75,19 +75,19 @@ namespace DesktopGame.MVVM.Model
 
                     if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
                     {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                        SetShip(cm, state, _fieldDictionary, _baseState);
                     }
                     else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
                     {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                        SetShip(cm, state, _fieldDictionary, _baseState);
                     }
                     else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
                     {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                        SetShip(cm, state, _fieldDictionary, _baseState);
                     }
                     else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
                     {
-                        SetShip(cm, state, _fieldDictionary, _baseStateCell);
+                        SetShip(cm, state, _fieldDictionary, _baseState);
                     }
                     else if (state.CurrentType == TypeShip.Delete)
                     {
@@ -99,7 +99,12 @@ namespace DesktopGame.MVVM.Model
 
         public void Shoot(int x, int y)
         {
-            //TODO
+            Shoot(x, y, _baseState, _fieldDictionary);
+        }
+
+        public void SetStandbyMode()
+        {
+            StartGame();
         }
     }
 }

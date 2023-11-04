@@ -45,6 +45,22 @@ namespace DesktopGame.MVVM.ViewModel
             OnPropertyChanged(nameof(CurrentField));
         }
 
+        public bool Shoot(int x, int y)
+        {
+            CurrentField.Shoot(x, y);
+            return true;
+        }
+
+        public void SetActiveMode()
+        {
+            CurrentField.StartGame();
+        }
+
+        public void SetStandbyMode()
+        {
+
+        }
+
         private void SetField()
         {
             if (_type == TypeField.EnemyField)

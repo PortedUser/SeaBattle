@@ -66,9 +66,10 @@ namespace DesktopGame.MVVM.ViewModel
             if (MyFieldVM.Filled && EnemyFieldVM.Filled)
             {
                 MyFieldVM.StartGame();
-                EnemyFieldVM?.StartGame();
+                EnemyFieldVM.StartGame();
                 _gameIsActive = true;
                 GameState = "Закончить игру";
+                ControlVM = null;
                 OnPropertyChanged(nameof(GameState));
             }
             else
@@ -83,6 +84,7 @@ namespace DesktopGame.MVVM.ViewModel
             MyFieldVM.StopGame();
             EnemyFieldVM.StopGame();
             GameState = "Начать игру";
+            ControlVM = new BattlefieldControlViewModel();
             OnPropertyChanged(nameof(GameState));
         }
 
