@@ -58,14 +58,14 @@ namespace DesktopGame.MVVM.ViewModel
 
         public void SetStandbyMode()
         {
-
+            CurrentField.SetStandbyMode();
         }
 
         private void SetField()
         {
             if (_type == TypeField.EnemyField)
             {
-                CurrentField = new EnemyBattlefield();
+                CurrentField = new EnemyBattlefield(this);
             }
             else if (_type == TypeField.MyField)
             {

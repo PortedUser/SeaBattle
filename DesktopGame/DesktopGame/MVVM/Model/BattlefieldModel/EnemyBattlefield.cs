@@ -17,8 +17,9 @@ namespace DesktopGame.MVVM.Model
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
 
-        public EnemyBattlefield() : base()
+        public EnemyBattlefield(BattlefieldViewModel parentVM) : base()
         {
+            _parentVM = parentVM;
             _fieldDictionary = new FieldDictionary();
             _baseState = StateCell.Cloud;
 
@@ -35,9 +36,9 @@ namespace DesktopGame.MVVM.Model
 
         public bool FieldFilled => true;
 
-        public void Shoot(int x, int y)
+        public bool Shoot(int x, int y)
         {
-            Shoot(x, y, _baseState, _fieldDictionary);
+            return Shoot(x, y, _baseState, _fieldDictionary);
         }
 
         public void StartGame()
@@ -48,7 +49,10 @@ namespace DesktopGame.MVVM.Model
                 {
                     var x = item.X;
                     var y = item.Y;
-                    Shoot(x, y);
+                    if (Shoot(x, y))
+                    {
+                        
+                    }
                 });
             }
         }

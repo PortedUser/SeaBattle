@@ -33,8 +33,6 @@ namespace DesktopGame.MVVM.Model
             SetPlacementCommands();
         }
 
-        
-
         private void DeleteShip(BattleCommand cm)
         {
             var ship = _fieldDictionary.GetAndDelPosShip(cm.X, cm.Y);
@@ -97,9 +95,9 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public void Shoot(int x, int y)
+        public bool Shoot(int x, int y)
         {
-            Shoot(x, y, _baseState, _fieldDictionary);
+            return Shoot(x, y, _baseState, _fieldDictionary);
         }
 
         public void SetStandbyMode()

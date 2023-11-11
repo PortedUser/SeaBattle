@@ -111,7 +111,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public void Shoot(int x, int y, StateCell baseState, FieldDictionary fieldDictionary)
+        public bool Shoot(int x, int y, StateCell baseState, FieldDictionary fieldDictionary)
         {
             if (this[x, y].CurrentState == baseState)
             {
@@ -127,8 +127,10 @@ namespace DesktopGame.MVVM.Model
                     {
                         EncloseShip(ship, baseState);
                     }
+                    return true;
                 }
             }
+            return false;
         }
 
         private void EncloseShip(List<Point> ship, StateCell baseState)
