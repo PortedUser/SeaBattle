@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.MVVM.ViewModel
 {
-    class BattlefieldViewModel: ObservableObject
+    class BattlefieldViewModel: ObservableObject, IEnemyVM
     {
         private IPlayingField _curField;
         private BattleViewModel _parentVM;
@@ -54,11 +54,6 @@ namespace DesktopGame.MVVM.ViewModel
         public void SetActiveMode()
         {
             CurrentField.StartGame();
-        }
-
-        public void SetStandbyMode()
-        {
-            CurrentField.SetStandbyMode();
         }
 
         private void SetField()

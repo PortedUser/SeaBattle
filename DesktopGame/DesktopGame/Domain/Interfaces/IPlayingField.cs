@@ -18,6 +18,5 @@ namespace DesktopGame.Domain.Interfaces
         public void StartGame();
         public void StopGame();
         public bool Shoot(int x, int y);
-        public void SetStandbyMode();
     }
 }

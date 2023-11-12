@@ -44,6 +44,13 @@ namespace DesktopGame.MVVM.Model
             _threeShip.Clear();
         }
 
+        public bool IsShipsFull(TypeShip type)
+        {
+            int numbDeckShips = (int)type / 10;
+            var fullCount = 4 - numbDeckShips + 1;
+            return _ships[numbDeckShips - 1].Count == fullCount;
+        }
+
         public List<Point> GetAndDelPosShip(int x, int y) 
         {
             foreach (var item in _ships)

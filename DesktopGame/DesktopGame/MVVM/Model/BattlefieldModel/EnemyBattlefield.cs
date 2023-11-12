@@ -73,23 +73,23 @@ namespace DesktopGame.MVVM.Model
                 count++;
                 if (!_fieldDictionary.FourShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.FourDeckShip,0,8);
+                    SetShipRandomPos(TypeShip.FourDeckShip, 0, 8);
                 }
                 if (!_fieldDictionary.BowShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.BowShip,0 + count%10/10, 9);
+                    SetShipRandomPos(TypeShip.BowShip, 0 + count % 10 / 10, 9);
                 }
-                 if (!_fieldDictionary.DoubleShipIsFull)
+                if (!_fieldDictionary.DoubleShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.DoubleDeckShip,2 ,8);
+                    SetShipRandomPos(TypeShip.DoubleDeckShip, 2, 8);
                 }
                 if (!_fieldDictionary.ThreeShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.ThreeDeckShip,1,8);
+                    SetShipRandomPos(TypeShip.ThreeDeckShip, 1, 8);
                 }
                 
             }
-            if (count >= 999)
+            if (count >= 4999)
             {
                 DeleteAll();
                 GenerateField();
@@ -128,11 +128,6 @@ namespace DesktopGame.MVVM.Model
                 item.SetFullState(_baseState);
             }
             _fieldDictionary.DeleteAll();
-        }
-
-        public void SetStandbyMode()
-        {
-            StopGame();
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace DesktopGame.MVVM.Model
 {
-    class BaseBattlefield : ObservableObject, IBattlefield
+    abstract class BaseBattlefield : ObservableObject, IBattlefield
     {
         private BindingList<BindingList<BattlefieldCell>> _battle;
         private BindingList<BattleCommand> _commands;
@@ -160,7 +160,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        private bool IsShipSunk(List<Point> ship)
+        public bool IsShipSunk(List<Point> ship)
         {
             foreach (var point in ship)
             {
@@ -188,7 +188,7 @@ namespace DesktopGame.MVVM.Model
             var finX = x + shiftX;
             var finY = y + shiftY;
 
-            var segementManager = new ShipSegments();
+            var segmentManager = new ShipSegments();
 
 
             if (finX < 10 && finY < 10 && CheckSpace(shiftX, shiftY, x, y, _baseStateCell))
@@ -199,7 +199,7 @@ namespace DesktopGame.MVVM.Model
                     var currX = x + i * shiftModulusX;
                     var currY = y + i * shiftModulusY;
 
-                    var newState = segementManager[state.CurrentType, state.AngleRotation, i];
+                    var newState = segmentManager[state.CurrentType, state.AngleRotation, i];
                     this[currX, currY].SetFullState(newState);
                 }
             }

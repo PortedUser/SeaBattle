@@ -71,26 +71,14 @@ namespace DesktopGame.MVVM.Model
                 {
                     var state = GetLastSetState();
 
-                    if (state.CurrentType == TypeShip.BowShip && !_fieldDictionary.BowShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseState);
-                    }
-                    else if (state.CurrentType == TypeShip.DoubleDeckShip && !_fieldDictionary.DoubleShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseState);
-                    }
-                    else if (state.CurrentType == TypeShip.ThreeDeckShip && !_fieldDictionary.ThreeShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseState);
-                    }
-                    else if (state.CurrentType == TypeShip.FourDeckShip && !_fieldDictionary.FourShipIsFull)
-                    {
-                        SetShip(cm, state, _fieldDictionary, _baseState);
-                    }
-                    else if (state.CurrentType == TypeShip.Delete)
+                    if (state.CurrentType == TypeShip.Delete)
                     {
                         DeleteShip(cm);
                     }
+                    else if (!_fieldDictionary.IsShipsFull(state.CurrentType))
+                    {
+                        SetShip(cm, state, _fieldDictionary, _baseState);
+                    }  
                 });
             }
         }
@@ -98,11 +86,6 @@ namespace DesktopGame.MVVM.Model
         public bool Shoot(int x, int y)
         {
             return Shoot(x, y, _baseState, _fieldDictionary);
-        }
-
-        public void SetStandbyMode()
-        {
-            StartGame();
         }
     }
 }
