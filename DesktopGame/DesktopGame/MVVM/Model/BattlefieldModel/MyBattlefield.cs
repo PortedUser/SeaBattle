@@ -15,6 +15,7 @@ namespace DesktopGame.MVVM.Model
     {
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
+        private IPlayingVM _enemyVM;
 
         public bool FieldFilled { get { return FieldDictionary.IsFull; } }
 
@@ -50,15 +51,26 @@ namespace DesktopGame.MVVM.Model
 
         public void StartGame()
         {
-            foreach (var cm in Commands)
+            if (!Commands[0].Equals(new RelayCommand(o => { })))
             {
-                cm.Command = new RelayCommand(o => { });
+                SetEmptyCommands();
             }
         }
 
         public void StopGame()
         {
-            SetPlacementCommands();
+            if (!Commands[0].Equals(new RelayCommand(o => { })))
+            {
+                SetEmptyCommands();
+            }
+        }
+
+        private void SetEmptyCommands()
+        {
+            foreach (var cm in Commands)
+            {
+                cm.Command = new RelayCommand(o => { });
+            }
         }
 
         private void SetPlacementCommands()
@@ -81,9 +93,9 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public bool Shoot(int x, int y)
+        public bool Shot(int x, int y)
         {
-            return Shoot(x, y, _baseState);
+            return Shot(x, y, _baseState);
         }
     }
 }

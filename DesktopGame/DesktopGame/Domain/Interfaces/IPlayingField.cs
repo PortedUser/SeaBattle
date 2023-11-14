@@ -17,6 +17,6 @@ namespace DesktopGame.Domain.Interfaces
         public bool FieldFilled { get; }
         public void StartGame();
         public void StopGame();
-        public bool Shoot(int x, int y);
+        public bool Shot(int x, int y);
     }
 }

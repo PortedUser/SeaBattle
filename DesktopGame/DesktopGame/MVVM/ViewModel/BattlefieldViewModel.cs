@@ -11,11 +11,12 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.MVVM.ViewModel
 {
-    class BattlefieldViewModel: ObservableObject, IEnemyVM
+    class BattlefieldViewModel: ObservableObject, IPlayingVM
     {
         private IPlayingField _curField;
         private BattleViewModel _parentVM;
         private TypeField _type;
+        private IPlayingVM _enemyVM;
 
         public IPlayingField CurrentField
         {
@@ -45,15 +46,20 @@ namespace DesktopGame.MVVM.ViewModel
             OnPropertyChanged(nameof(CurrentField));
         }
 
-        public bool Shoot(int x, int y)
+        public void SetEnemyVM(IPlayingVM vm)
         {
-            CurrentField.Shoot(x, y);
-            return true;
+            _enemyVM = vm;
         }
 
-        public void SetActiveMode()
+        public IPlayingVM GetEnemyVM()
         {
-            CurrentField.StartGame();
+            return _enemyVM;
+        }
+
+        public bool Shot(int x, int y)
+        {
+
+            return CurrentField.Shot(x, y);
         }
 
         private void SetField()
@@ -72,5 +78,10 @@ namespace DesktopGame.MVVM.ViewModel
         {
             return _parentVM.GetLastSetState();
         }
-	}
+
+        public void UpdateVM()
+        {
+            OnPropertyChanged(nameof(CurrentField));
+        }
+    }
 }

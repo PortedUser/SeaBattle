@@ -46,6 +46,9 @@ namespace DesktopGame.MVVM.ViewModel
             EnemyFieldVM = new BattlefieldViewModel(TypeField.EnemyField, this);
             ControlVM = new BattlefieldControlViewModel();
 
+            MyFieldVM.SetEnemyVM(EnemyFieldVM);
+            EnemyFieldVM.SetEnemyVM(MyFieldVM);
+
             StopGame();
 
             SwitchStateGame = new RelayCommand(o =>

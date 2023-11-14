@@ -105,9 +105,6 @@ namespace DesktopGame.MVVM.Model
             var shiftX = GetShift(lengthShip, shiftModulusX);
             var shiftY = GetShift(lengthShip, shiftModulusY);
 
-            var finX = x + shiftX;
-            var finY = y + shiftY;
-
             currList.Add(new List<Point>());
             var numbItem = currList.Count - 1;
 
@@ -123,69 +120,6 @@ namespace DesktopGame.MVVM.Model
         private int GetShift(int length, int modulus)
         {
             return (length - 1) * modulus;
-        }
-
-        public void AddBowShip(int x, int y)
-        {
-            _bowShip.Add(new List<Point>());
-            _bowShip[_bowShip.Count - 1].Add(new Point(x, y));
-        }
-
-        public void AddDoubleShip(int x, int y, int angle)
-        {
-            _doubleShip.Add(new List<Point>());
-            var number = _doubleShip.Count - 1;
-
-            if (angle == 0)
-            {
-                _doubleShip[number].Add(new Point(x, y ));
-                _doubleShip[number].Add(new Point(x, y + 1));
-            }
-            else if (angle == 90)
-            {
-                _doubleShip[number].Add(new Point(x, y));
-                _doubleShip[number].Add(new Point(x + 1, y));
-            }
-        }
-
-        public void AddThreeShip(int x, int y, int angle)
-        {
-            _threeShip.Add(new List<Point>());
-            var number = _threeShip.Count - 1;
-
-            if (angle == 0)
-            {
-                _threeShip[number].Add(new Point(x, y));
-                _threeShip[number].Add(new Point(x, y + 1));
-                _threeShip[number].Add(new Point(x, y + 2));
-            }
-            else if (angle == 90)
-            {
-                _threeShip[number].Add(new Point(x, y));
-                _threeShip[number].Add(new Point(x + 1, y));
-                _threeShip[number].Add(new Point(x + 2, y));
-            }
-        }
-
-        public void AddFourShip(int x, int y, int angle)
-        {
-            _fourShip.Add(new List<Point>());
-            var number = _fourShip.Count - 1;
-
-            if (angle == 0)
-            {
-                _fourShip[number].Add(new Point(x, y));
-                _fourShip[number].Add(new Point(x, y + 1));
-                _fourShip[number].Add(new Point(x, y + 2));
-                _fourShip[number].Add(new Point(x, y + 3));
-            }
-            else if (angle == 90)
-            {
-                _fourShip[number].Add(new Point(x, y));
-                _fourShip[number].Add(new Point(x + 1, y));
-                _fourShip[number].Add(new Point(x + 2, y));
-                _fourShip[number].Add(new Point(x + 3, y ));
-            }
         }
     }
 }

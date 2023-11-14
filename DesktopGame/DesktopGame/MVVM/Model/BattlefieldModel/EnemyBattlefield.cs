@@ -15,6 +15,7 @@ namespace DesktopGame.MVVM.Model
     {
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
+        private IPlayingVM _enemyVM;
 
         public EnemyBattlefield(BattlefieldViewModel parentVM) : base()
         {
@@ -32,30 +33,56 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public bool FieldFilled => true;
+        public bool FieldFilled => FieldDictionary.IsFull;
 
-        public bool Shoot(int x, int y)
+        public bool Shot(int x, int y)
         {
-            return Shoot(x, y, _baseState);
+            return Shot(x, y, _baseState);
         }
 
         public void StartGame()
         {
+            _enemyVM = _parentVM.GetEnemyVM();
             foreach (var item in Commands)
             {
                 item.Command = new RelayCommand(o =>
                 {
                     var x = item.X;
                     var y = item.Y;
-                    if (Shoot(x, y))
+                    if (!Shot(x, y))
                     {
-                        
+                        RandomShot();
                     }
                 });
             }
         }
 
+        private void RandomShot()
+        {
+            StopGame();
+            var rnd = new Random();
+            var x = rnd.Next(0,9);
+            var y = rnd.Next(0,9);
+            if (_enemyVM.Shot(x,y))
+            {
+                _enemyVM.UpdateVM();
+                RandomShot();
+            }
+            else
+            {
+                StartGame();
+            }
+        }
+
         public void StopGame()
+        {
+            if (!Commands[0].Equals(new RelayCommand(o => { })))
+            {
+                SetEmptyCommands();
+            }
+        }
+
+        private void SetEmptyCommands()
         {
             foreach (var cm in Commands)
             {
@@ -79,7 +106,7 @@ namespace DesktopGame.MVVM.Model
                 }
                 if (!FieldDictionary.DoubleShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.DoubleDeckShip, 2, 8);
+                    SetShipRandomPos(TypeShip.DoubleDeckShip, 0, 8);
                 }
                 if (!FieldDictionary.ThreeShipIsFull)
                 {
@@ -98,7 +125,7 @@ namespace DesktopGame.MVVM.Model
         {
             var rnd = new Random();
             var value = rnd.Next(0, 100);
-            if (value <=50 )
+            if (value <=65 )
             {
                 return AngleOfRotation.Angle_0;
             }

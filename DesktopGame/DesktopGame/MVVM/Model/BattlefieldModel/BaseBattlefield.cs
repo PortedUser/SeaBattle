@@ -120,7 +120,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        protected bool Shoot(int x, int y, StateCell baseState)
+        protected bool Shot(int x, int y, StateCell baseState)
         {
             if (this[x, y].CurrentState == baseState)
             {
