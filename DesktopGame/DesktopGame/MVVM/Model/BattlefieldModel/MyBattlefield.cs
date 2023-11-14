@@ -15,15 +15,13 @@ namespace DesktopGame.MVVM.Model
     {
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
-        private FieldDictionary _fieldDictionary;
 
-        public bool FieldFilled { get { return _fieldDictionary.IsFull; } }
+        public bool FieldFilled { get { return FieldDictionary.IsFull; } }
 
         public MyBattlefield(BattlefieldViewModel vm) : base()
         {
             _parentVM = vm;
             _baseState = StateCell.Wave;
-            _fieldDictionary = new FieldDictionary();
 
             foreach (BattlefieldCell item in this)
             {
@@ -35,7 +33,7 @@ namespace DesktopGame.MVVM.Model
 
         private void DeleteShip(BattleCommand cm)
         {
-            var ship = _fieldDictionary.GetAndDelPosShip(cm.X, cm.Y);
+            var ship = FieldDictionary.GetAndDelPosShip(cm.X, cm.Y);
             if (ship != null)
             {
                 foreach (var point in ship)
@@ -75,9 +73,9 @@ namespace DesktopGame.MVVM.Model
                     {
                         DeleteShip(cm);
                     }
-                    else if (!_fieldDictionary.IsShipsFull(state.CurrentType))
+                    else if (!FieldDictionary.IsShipsFull(state.CurrentType))
                     {
-                        SetShip(cm, state, _fieldDictionary, _baseState);
+                        SetShip(cm, state,_baseState);
                     }  
                 });
             }
@@ -85,7 +83,7 @@ namespace DesktopGame.MVVM.Model
 
         public bool Shoot(int x, int y)
         {
-            return Shoot(x, y, _baseState, _fieldDictionary);
+            return Shoot(x, y, _baseState);
         }
     }
 }

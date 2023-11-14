@@ -15,6 +15,14 @@ namespace DesktopGame.MVVM.Model
     {
         private BindingList<BindingList<BattlefieldCell>> _battle;
         private BindingList<BattleCommand> _commands;
+        private FieldDictionary _fieldDictionary;
+
+        protected FieldDictionary FieldDictionary
+        {
+            get { return _fieldDictionary; }
+            set { _fieldDictionary = value; }
+        }
+
 
         public BindingList<BattleCommand> Commands
         {
@@ -27,6 +35,7 @@ namespace DesktopGame.MVVM.Model
         {
             _battle = new BindingList<BindingList<BattlefieldCell>>();
             _commands = new BindingList<BattleCommand>();
+            _fieldDictionary = new FieldDictionary();
 
             for (int x = 0; x < 10; x++)
             {
@@ -111,7 +120,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public bool Shoot(int x, int y, StateCell baseState, FieldDictionary fieldDictionary)
+        protected bool Shoot(int x, int y, StateCell baseState)
         {
             if (this[x, y].CurrentState == baseState)
             {
@@ -120,7 +129,7 @@ namespace DesktopGame.MVVM.Model
             else if (this[x, y].CurrentState != StateCell.Miss)
             {
                 this[x, y].SetFullState(StateCell.Explosion);
-                var ship = fieldDictionary.GetShip(x, y);
+                var ship = FieldDictionary.GetShip(x, y);
                 if (ship != null)
                 {
                     if (IsShipSunk(ship))
@@ -172,7 +181,7 @@ namespace DesktopGame.MVVM.Model
             return true;
         }
 
-        public void SetShip(BattleCommand cm, StateShip state, FieldDictionary _fieldDictionary, StateCell _baseStateCell)
+        protected void SetShip(BattleCommand cm, StateShip state,StateCell _baseStateCell)
         {
             var x = cm.X;
             var y = cm.Y;
@@ -193,7 +202,7 @@ namespace DesktopGame.MVVM.Model
 
             if (finX < 10 && finY < 10 && CheckSpace(shiftX, shiftY, x, y, _baseStateCell))
             {
-                _fieldDictionary.AddShip(x, y, state);
+                FieldDictionary.AddShip(x, y, state);
                 for (int i = 0; i < lengthShip; i++)
                 {
                     var currX = x + i * shiftModulusX;
@@ -205,9 +214,9 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public void SetShip(int x, int y, StateShip state, FieldDictionary _fieldDictionary, StateCell _baseStateCell)
+        protected void SetShip(int x, int y, StateShip state,StateCell _baseStateCell)
         {
-            SetShip(new BattleCommand(x,y), state, _fieldDictionary, _baseStateCell);
+            SetShip(new BattleCommand(x,y), state, _baseStateCell);
         }
 
         private int GetShift(int length, int modulus)

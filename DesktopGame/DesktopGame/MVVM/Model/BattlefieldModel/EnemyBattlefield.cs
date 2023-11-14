@@ -13,14 +13,12 @@ namespace DesktopGame.MVVM.Model
 {
     class EnemyBattlefield : BaseBattlefield, IPlayingField
     {
-        private FieldDictionary _fieldDictionary;
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
 
         public EnemyBattlefield(BattlefieldViewModel parentVM) : base()
         {
             _parentVM = parentVM;
-            _fieldDictionary = new FieldDictionary();
             _baseState = StateCell.Cloud;
 
             foreach (BattlefieldCell item in this)
@@ -38,7 +36,7 @@ namespace DesktopGame.MVVM.Model
 
         public bool Shoot(int x, int y)
         {
-            return Shoot(x, y, _baseState, _fieldDictionary);
+            return Shoot(x, y, _baseState);
         }
 
         public void StartGame()
@@ -68,22 +66,22 @@ namespace DesktopGame.MVVM.Model
         private void GenerateField()
         {
             var count = 0;
-            while (!_fieldDictionary.IsFull && count < 5000)
+            while (!FieldDictionary.IsFull && count < 5000)
             {
                 count++;
-                if (!_fieldDictionary.FourShipIsFull)
+                if (!FieldDictionary.FourShipIsFull)
                 {
-                    SetShipRandomPos(TypeShip.FourDeckShip, 0, 8);
+                    SetShipRandomPos(TypeShip.FourDeckShip, 0, 9);
                 }
-                if (!_fieldDictionary.BowShipIsFull)
+                if (!FieldDictionary.BowShipIsFull)
                 {
                     SetShipRandomPos(TypeShip.BowShip, 0 + count % 10 / 10, 9);
                 }
-                if (!_fieldDictionary.DoubleShipIsFull)
+                if (!FieldDictionary.DoubleShipIsFull)
                 {
                     SetShipRandomPos(TypeShip.DoubleDeckShip, 2, 8);
                 }
-                if (!_fieldDictionary.ThreeShipIsFull)
+                if (!FieldDictionary.ThreeShipIsFull)
                 {
                     SetShipRandomPos(TypeShip.ThreeDeckShip, 1, 8);
                 }
@@ -94,7 +92,6 @@ namespace DesktopGame.MVVM.Model
                 DeleteAll();
                 GenerateField();
             }
-
         }
 
         private AngleOfRotation GenerateAngle()
@@ -118,7 +115,7 @@ namespace DesktopGame.MVVM.Model
             var rndY = rnd.Next(a, b);
             var state = new StateShip(type);
             state.AngleRotation = GenerateAngle();
-            SetShip(rndX, rndY, state, _fieldDictionary, _baseState);
+            SetShip(rndX, rndY, state,_baseState);
         }
 
         private void DeleteAll()
@@ -127,7 +124,7 @@ namespace DesktopGame.MVVM.Model
             {
                 item.SetFullState(_baseState);
             }
-            _fieldDictionary.DeleteAll();
+            FieldDictionary.DeleteAll();
         }
     }
 }
