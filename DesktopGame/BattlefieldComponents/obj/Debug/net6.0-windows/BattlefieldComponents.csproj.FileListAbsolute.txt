@@ -1,0 +1,11 @@
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\bin\Debug\net6.0-windows\BattlefieldComponents.deps.json
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\bin\Debug\net6.0-windows\BattlefieldComponents.dll
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\bin\Debug\net6.0-windows\BattlefieldComponents.pdb
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.AssemblyInfoInputs.cache
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.AssemblyInfo.cs
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.csproj.CoreCompileInputs.cache
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.dll
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\refint\BattlefieldComponents.dll
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\BattlefieldComponents.pdb
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\BattlefieldComponents\obj\Debug\net6.0-windows\ref\BattlefieldComponents.dll

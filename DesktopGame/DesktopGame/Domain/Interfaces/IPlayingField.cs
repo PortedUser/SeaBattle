@@ -1,4 +1,4 @@
-﻿using DesktopGame.Core;
+﻿using BattlefieldComponents.Core;
 using DesktopGame.MVVM.Model.BattlefieldModel;
 using DesktopGame.MVVM.ViewModel;
 using System;

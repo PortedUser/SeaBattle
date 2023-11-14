@@ -1919,10 +1919,24 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "BattlefieldComponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BattlefieldComponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BattlefieldComponents.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "DesktopGame/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "BattlefieldComponents": "1.0.0",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "compile": {
@@ -6653,6 +6667,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BattlefieldComponents/1.0.0": {
+      "type": "project",
+      "path": "../BattlefieldComponents/BattlefieldComponents.csproj",
+      "msbuildProject": "../BattlefieldComponents/BattlefieldComponents.csproj"
     },
     "DesktopGame/1.0.0": {
       "type": "project",

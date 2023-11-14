@@ -66,6 +66,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BattlefieldComponents\BattlefieldComponents.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\2Deck1.png" />
     <Resource Include="Images\2Deck2.png" />
     <Resource Include="Images\3Deck1.png" />

@@ -131,6 +131,19 @@
             "rid": "win"
           }
         }
+      },
+      "BattlefieldComponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BattlefieldComponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BattlefieldComponents.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -316,10 +329,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BattlefieldComponents/1.0.0": {
+      "type": "project",
+      "path": "../BattlefieldComponents/BattlefieldComponents.csproj",
+      "msbuildProject": "../BattlefieldComponents/BattlefieldComponents.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "BattlefieldComponents >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 7.0.0"
     ]
   },
@@ -354,7 +373,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\BattlefieldComponents\\BattlefieldComponents.csproj": {
+              "projectPath": "D:\\Repos\\SeaBattle\\SeaBattle\\DesktopGame\\BattlefieldComponents\\BattlefieldComponents.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

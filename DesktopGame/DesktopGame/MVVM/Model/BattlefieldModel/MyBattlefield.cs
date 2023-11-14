@@ -1,4 +1,4 @@
-﻿using DesktopGame.Core;
+﻿using BattlefieldComponents.Core;
 using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model.BattlefieldModel;

@@ -42,3 +42,5 @@ D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\Th
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldControlView.g.cs
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\MVVM\View\BattlefieldControlView.baml
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\obj\Debug\net6.0-windows\Theme\ButtonControlBattleTheme.baml
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\bin\Debug\net6.0-windows\BattlefieldComponents.dll
+D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\bin\Debug\net6.0-windows\BattlefieldComponents.pdb
