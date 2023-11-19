@@ -37,9 +37,14 @@
             <StackPanel Grid.Row="1" 
                         Grid.Column="2"
                         Margin="20,10,5,10">
-                
-                <Button  Content="{Binding GameState}"
-                         Command="{Binding SwitchStateGame}"
+
+                <Button  Content="{Binding SwitchStateGame.Text}"
+                         Command="{Binding SwitchStateGame.Command}"
+                         />
+
+                <Button  Content="{Binding SetRandomField.Text}"
+                         Command="{Binding SetRandomField.Command}"
+                         Visibility="{Binding SetRandomField.Visibility}"
                          />
                 
             </StackPanel>

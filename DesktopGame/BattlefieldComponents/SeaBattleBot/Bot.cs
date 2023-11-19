@@ -52,8 +52,8 @@ namespace BattlefieldComponents.SeaBattleBot
                 _enemyField[res.X][res.Y].WasAttacked();
                 return res;
             }
-            
-            return RandomShot();
+            var rnd = new Random();
+            return RandomShot(rnd);
         }
 
         private void EncloseShip(List<Point> ship)
@@ -84,6 +84,11 @@ namespace BattlefieldComponents.SeaBattleBot
             {
                 var finX = point.X + _listSteps[i].X;
                 var finY = point.Y + _listSteps[i].Y;
+
+                if (!WithinTheBorder(new Point(finX, finY)))
+                {
+                    continue;
+                }
 
                 if (WithinTheBorder(new Point(finX,finY)) && !_enemyField[finX][finY].IsWasAttacked)
                 {
@@ -149,13 +154,12 @@ namespace BattlefieldComponents.SeaBattleBot
             return finX < 10 && finX > -1 && finY > -1 && finY < 10;
         }
 
-        private Point RandomShot()
+        private Point RandomShot(Random rnd)
         {
-            var rnd = new Random();
             var shot = GetRandomPoint(rnd);
             if (_enemyField[shot.X][shot.Y].IsWasAttacked)
             {
-                shot = RandomShot();
+                shot = RandomShot(rnd);
             }
             _enemyField[shot.X][shot.Y].WasAttacked();
             _lastHit = shot;

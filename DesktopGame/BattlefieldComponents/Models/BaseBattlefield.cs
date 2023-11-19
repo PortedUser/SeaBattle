@@ -261,5 +261,69 @@ namespace DesktopGame.MVVM.Model
             }
             return true;
         }
+
+        protected void GenerateField(StateCell _baseState)
+        {
+            var count = 0;
+            while (!FieldDictionary.IsFull && count < 5000)
+            {
+                count++;
+                if (!FieldDictionary.FourShipIsFull)
+                {
+                    SetShipRandomPos(_baseState, TypeShip.FourDeckShip, 0, 9);
+                }
+                if (!FieldDictionary.BowShipIsFull)
+                {
+                    SetShipRandomPos(_baseState, TypeShip.BowShip, 0 + count % 10 / 10, 9);
+                }
+                if (!FieldDictionary.DoubleShipIsFull)
+                {
+                    SetShipRandomPos(_baseState, TypeShip.DoubleDeckShip, 0, 8);
+                }
+                if (!FieldDictionary.ThreeShipIsFull)
+                {
+                    SetShipRandomPos(_baseState , TypeShip.ThreeDeckShip, 1, 8);
+                }
+
+            }
+            if (count >= 4999)
+            {
+                DeleteAll(_baseState);
+                GenerateField(_baseState);
+            }
+        }
+
+        private AngleOfRotation GenerateAngle()
+        {
+            var rnd = new Random();
+            var value = rnd.Next(0, 100);
+            if (value <= 65)
+            {
+                return AngleOfRotation.Angle_0;
+            }
+            else
+            {
+                return AngleOfRotation.Angle_90;
+            }
+        }
+
+        private void SetShipRandomPos(StateCell _baseState, TypeShip type, int a, int b)
+        {
+            var rnd = new Random();
+            var rndX = rnd.Next(a, b);
+            var rndY = rnd.Next(a, b);
+            var state = new StateShip(type);
+            state.AngleRotation = GenerateAngle();
+            SetShip(rndX, rndY, state, _baseState);
+        }
+
+        public void DeleteAll(StateCell _baseState)
+        {
+            foreach (BattlefieldCell item in this)
+            {
+                item.SetFullState(_baseState);
+            }
+            FieldDictionary.DeleteAll();
+        }
     }
 }

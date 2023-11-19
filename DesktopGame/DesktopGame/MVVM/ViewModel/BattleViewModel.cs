@@ -17,9 +17,9 @@ namespace DesktopGame.MVVM.ViewModel
         private BattlefieldViewModel _myBattleField;
         private BattlefieldViewModel _enemyBattleField;
         private BattlefieldControlViewModel _controlVM;
-        private bool _gameIsActive;
-        public string GameState { get; set; }
-        public RelayCommand SwitchStateGame { get; set; }
+
+        public ButtonState SwitchStateGame { get; set; }
+        public ButtonState SetRandomField { get; set; }
 
         public BattlefieldViewModel MyFieldVM
         {
@@ -42,25 +42,36 @@ namespace DesktopGame.MVVM.ViewModel
 
         public BattleViewModel() 
         {
-            
+            SwitchStateGame = new ButtonState();
+            SetRandomField = new ButtonState();
             MyFieldVM = new BattlefieldViewModel(TypeField.MyField, this);
             EnemyFieldVM = new BattlefieldViewModel(TypeField.EnemyField, this);
             ControlVM = new BattlefieldControlViewModel();
+
+            SetRandomField.Text = "Случайная расстановка";
 
             MyFieldVM.SetEnemyVM(EnemyFieldVM);
             EnemyFieldVM.SetEnemyVM(MyFieldVM);
 
             StopGame();
 
-            SwitchStateGame = new RelayCommand(o =>
+            SetRandomField.Command = new RelayCommand(o =>
             {
-                if (!_gameIsActive)
+                MyFieldVM.CurrentField.DeleteAll();
+                MyFieldVM.CurrentField.SetRandomField();
+            });
+
+            SwitchStateGame.Command = new RelayCommand(o =>
+            {
+                if (!SwitchStateGame.State)
                 {
                     StartGame();
+                    SetRandomField.Visibility = Visibility.Hidden;
                 }
                 else
                 {
                     StopGame();
+                    SetRandomField.Visibility = Visibility.Visible;
                 }
             });
         }
@@ -71,10 +82,10 @@ namespace DesktopGame.MVVM.ViewModel
             {
                 MyFieldVM.StartGame();
                 EnemyFieldVM.StartGame();
-                _gameIsActive = true;
-                GameState = "Закончить игру";
+                SwitchStateGame.State = true;
+                SwitchStateGame.Text = "Закончить игру";
                 ControlVM = null;
-                OnPropertyChanged(nameof(GameState));
+                OnPropertyChanged(nameof(SwitchStateGame));
             }
             else
             {
@@ -84,12 +95,12 @@ namespace DesktopGame.MVVM.ViewModel
 
         private void StopGame()
         {
-            _gameIsActive = false;
+            SwitchStateGame.State = false;
             MyFieldVM.StopGame();
             EnemyFieldVM.StopGame();
-            GameState = "Начать игру";
+            SwitchStateGame.Text = "Начать игру";
             ControlVM = new BattlefieldControlViewModel();
-            OnPropertyChanged(nameof(GameState));
+            OnPropertyChanged(nameof(SwitchStateGame));
         }
 
         public StateShip GetLastSetState()

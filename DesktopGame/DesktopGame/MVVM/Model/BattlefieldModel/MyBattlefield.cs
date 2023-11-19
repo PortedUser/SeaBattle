@@ -101,5 +101,14 @@ namespace DesktopGame.MVVM.Model
         {
             return Shot(x, y, _baseState);
         }
+
+        public void SetRandomField()
+        {
+            GenerateField(_baseState);
+        }
+        public void DeleteAll()
+        {
+            DeleteAll(_baseState);
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace DesktopGame.MVVM.Model
             {
                 item.SetFullState(_baseState);
             }
-            GenerateField();
+            GenerateField(_baseState);
             foreach (BattlefieldCell item in this)
             {
                 item.HideState(_baseState);
@@ -91,68 +91,14 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        private void GenerateField()
+        public void SetRandomField()
         {
-            var count = 0;
-            while (!FieldDictionary.IsFull && count < 5000)
-            {
-                count++;
-                if (!FieldDictionary.FourShipIsFull)
-                {
-                    SetShipRandomPos(TypeShip.FourDeckShip, 0, 9);
-                }
-                if (!FieldDictionary.BowShipIsFull)
-                {
-                    SetShipRandomPos(TypeShip.BowShip, 0 + count % 10 / 10, 9);
-                }
-                if (!FieldDictionary.DoubleShipIsFull)
-                {
-                    SetShipRandomPos(TypeShip.DoubleDeckShip, 0, 8);
-                }
-                if (!FieldDictionary.ThreeShipIsFull)
-                {
-                    SetShipRandomPos(TypeShip.ThreeDeckShip, 1, 8);
-                }
-                
-            }
-            if (count >= 4999)
-            {
-                DeleteAll();
-                GenerateField();
-            }
+            GenerateField(_baseState);
         }
 
-        private AngleOfRotation GenerateAngle()
+        public void DeleteAll()
         {
-            var rnd = new Random();
-            var value = rnd.Next(0, 100);
-            if (value <=65 )
-            {
-                return AngleOfRotation.Angle_0;
-            }
-            else
-            {
-                return AngleOfRotation.Angle_90;
-            }
-        }
-
-        private void SetShipRandomPos(TypeShip type, int a, int b)
-        {
-            var rnd = new Random();
-            var rndX = rnd.Next(a, b);
-            var rndY = rnd.Next(a, b);
-            var state = new StateShip(type);
-            state.AngleRotation = GenerateAngle();
-            SetShip(rndX, rndY, state,_baseState);
-        }
-
-        private void DeleteAll()
-        {
-            foreach (BattlefieldCell item in this)
-            {
-                item.SetFullState(_baseState);
-            }
-            FieldDictionary.DeleteAll();
+            DeleteAll(_baseState);
         }
     }
 }

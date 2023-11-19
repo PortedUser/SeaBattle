@@ -19,5 +19,7 @@ namespace DesktopGame.Domain.Interfaces
         public void StartGame();
         public void StopGame();
         public ShotResult Shot(int x, int y);
+        public void SetRandomField();
+        public void DeleteAll();
     }
 }
