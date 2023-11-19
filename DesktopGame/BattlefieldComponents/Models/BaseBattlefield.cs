@@ -17,6 +17,8 @@ namespace DesktopGame.MVVM.Model
         private BindingList<BindingList<BattlefieldCell>> _battle;
         private BindingList<BattleCommand> _commands;
         private FieldDictionary _fieldDictionary;
+        private int _countSunkShip;
+        public bool IsLose { get; private set; }
 
         protected FieldDictionary FieldDictionary
         {
@@ -135,6 +137,8 @@ namespace DesktopGame.MVVM.Model
                 {
                     if (IsShipSunk(ship))
                     {
+                        _countSunkShip++;
+                        if (_countSunkShip == 10) { IsLose = true; OnPropertyChanged(nameof(IsLose)); }
                         EncloseShip(ship, baseState);
                         return new ShotResult(true,true);
                     }

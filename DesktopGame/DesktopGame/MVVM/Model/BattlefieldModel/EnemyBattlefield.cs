@@ -7,6 +7,7 @@ using System;
 using BattlefieldComponents.Core;
 using BattlefieldComponents.SeaBattleBot;
 using BattlefieldComponents.Models;
+using System.Threading;
 
 namespace DesktopGame.MVVM.Model
 {
@@ -52,7 +53,8 @@ namespace DesktopGame.MVVM.Model
                 {
                     var x = item.X;
                     var y = item.Y;
-                    if (!Shot(x, y).HitSuccessfully)
+                    var res = Shot(x, y);
+                    if (!res.HitSuccessfully)
                     {
                         EnemyShot(MeBot.Shot());
                     }

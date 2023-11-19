@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DesktopGame.Domain.Interfaces
 {
-    interface IPlayingField
+    public interface IPlayingField : INotifyPropertyChanged
     {
         public BattlefieldCell this[int index] { get; set; }
         public BindingList<BattleCommand> Commands { get; set; }

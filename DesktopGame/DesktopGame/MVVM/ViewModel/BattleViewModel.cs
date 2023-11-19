@@ -66,14 +66,41 @@ namespace DesktopGame.MVVM.ViewModel
                 if (!SwitchStateGame.State)
                 {
                     StartGame();
-                    SetRandomField.Visibility = Visibility.Hidden;
+                   
                 }
                 else
                 {
                     StopGame();
-                    SetRandomField.Visibility = Visibility.Visible;
+                    
                 }
             });
+
+            MyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged;
+            EnemyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged1;
+        }
+
+        private void CurrentField_PropertyChanged1(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case "IsLose":
+                    MessageBox.Show("Вы победили");
+                    StopGame();
+                    break;
+                default: break;
+            }
+        }
+
+        private void CurrentField_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            switch(e.PropertyName) 
+            {
+                case "IsLose":
+                    MessageBox.Show("Вы проиграли");
+                    StopGame();
+                    break;
+                default: break;
+            }
         }
 
         private void StartGame()
@@ -86,6 +113,8 @@ namespace DesktopGame.MVVM.ViewModel
                 SwitchStateGame.Text = "Закончить игру";
                 ControlVM = null;
                 OnPropertyChanged(nameof(SwitchStateGame));
+                SetRandomField.Visibility = Visibility.Hidden;
+
             }
             else
             {
@@ -101,6 +130,7 @@ namespace DesktopGame.MVVM.ViewModel
             SwitchStateGame.Text = "Начать игру";
             ControlVM = new BattlefieldControlViewModel();
             OnPropertyChanged(nameof(SwitchStateGame));
+            SetRandomField.Visibility = Visibility.Visible;
         }
 
         public StateShip GetLastSetState()
