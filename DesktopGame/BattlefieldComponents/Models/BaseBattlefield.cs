@@ -8,6 +8,7 @@ using System.Windows;
 using DesktopGame.Domain.Enum;
 using System.Collections.Generic;
 using BattlefieldComponents.Core;
+using BattlefieldComponents.Models;
 
 namespace DesktopGame.MVVM.Model
 {
@@ -120,7 +121,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        protected bool Shot(int x, int y, StateCell baseState)
+        protected ShotResult Shot(int x, int y, StateCell baseState)
         {
             if (this[x, y].CurrentState == baseState)
             {
@@ -135,11 +136,12 @@ namespace DesktopGame.MVVM.Model
                     if (IsShipSunk(ship))
                     {
                         EncloseShip(ship, baseState);
+                        return new ShotResult(true,true);
                     }
-                    return true;
+                    return new ShotResult(true);
                 }
             }
-            return false;
+            return new ShotResult();
         }
 
         private void EncloseShip(List<Point> ship, StateCell baseState)

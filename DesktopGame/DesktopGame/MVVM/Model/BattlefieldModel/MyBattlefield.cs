@@ -1,4 +1,6 @@
 ﻿using BattlefieldComponents.Core;
+using BattlefieldComponents.Models;
+using BattlefieldComponents.SeaBattleBot;
 using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model.BattlefieldModel;
@@ -19,7 +21,9 @@ namespace DesktopGame.MVVM.Model
 
         public bool FieldFilled { get { return FieldDictionary.IsFull; } }
 
+#pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         public MyBattlefield(BattlefieldViewModel vm) : base()
+#pragma warning restore CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         {
             _parentVM = vm;
             _baseState = StateCell.Wave;
@@ -93,7 +97,7 @@ namespace DesktopGame.MVVM.Model
             }
         }
 
-        public bool Shot(int x, int y)
+        public ShotResult Shot(int x, int y)
         {
             return Shot(x, y, _baseState);
         }

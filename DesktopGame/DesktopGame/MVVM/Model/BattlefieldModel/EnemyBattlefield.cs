@@ -5,6 +5,8 @@ using DesktopGame.MVVM.Model.BattlefieldModel;
 using DesktopGame.MVVM.ViewModel;
 using System;
 using BattlefieldComponents.Core;
+using BattlefieldComponents.SeaBattleBot;
+using BattlefieldComponents.Models;
 
 namespace DesktopGame.MVVM.Model
 {
@@ -13,11 +15,15 @@ namespace DesktopGame.MVVM.Model
         private BattlefieldViewModel _parentVM;
         private StateCell _baseState;
         private IPlayingVM _enemyVM;
+        private Bot MeBot;
 
+#pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         public EnemyBattlefield(BattlefieldViewModel parentVM) : base()
+#pragma warning restore CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         {
             _parentVM = parentVM;
             _baseState = StateCell.Cloud;
+            MeBot = new Bot();
 
             foreach (BattlefieldCell item in this)
             {
@@ -32,7 +38,7 @@ namespace DesktopGame.MVVM.Model
 
         public bool FieldFilled => FieldDictionary.IsFull;
 
-        public bool Shot(int x, int y)
+        public ShotResult Shot(int x, int y)
         {
             return Shot(x, y, _baseState);
         }
@@ -46,24 +52,22 @@ namespace DesktopGame.MVVM.Model
                 {
                     var x = item.X;
                     var y = item.Y;
-                    if (!Shot(x, y))
+                    if (!Shot(x, y).HitSuccessfully)
                     {
-                        RandomShot();
+                        EnemyShot(MeBot.Shot());
                     }
                 });
             }
         }
 
-        private void RandomShot()
+        private void EnemyShot(Point point)
         {
             StopGame();
-            var rnd = new Random();
-            var x = rnd.Next(0,9);
-            var y = rnd.Next(0,9);
-            if (_enemyVM.Shot(x,y))
+            var res = _enemyVM.Shot(point.X, point.Y);
+            if (res.HitSuccessfully)
             {
-                _enemyVM.UpdateVM();
-                RandomShot();
+                MeBot.SetResultShot(res);
+                EnemyShot(MeBot.Shot());
             }
             else
             {

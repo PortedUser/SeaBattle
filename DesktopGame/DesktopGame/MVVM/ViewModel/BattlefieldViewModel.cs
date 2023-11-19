@@ -3,6 +3,7 @@ using DesktopGame.Domain.Enum;
 using DesktopGame.Domain.Interfaces;
 using DesktopGame.MVVM.Model;
 using BattlefieldComponents.Core;
+using BattlefieldComponents.Models;
 
 namespace DesktopGame.MVVM.ViewModel
 {
@@ -51,7 +52,7 @@ namespace DesktopGame.MVVM.ViewModel
             return _enemyVM;
         }
 
-        public bool Shot(int x, int y)
+        public ShotResult Shot(int x, int y)
         {
 
             return CurrentField.Shot(x, y);

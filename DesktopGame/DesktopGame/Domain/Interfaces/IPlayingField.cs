@@ -1,4 +1,5 @@
 ﻿using BattlefieldComponents.Core;
+using BattlefieldComponents.Models;
 using DesktopGame.MVVM.Model.BattlefieldModel;
 using DesktopGame.MVVM.ViewModel;
 using System;
@@ -17,6 +18,6 @@ namespace DesktopGame.Domain.Interfaces
         public bool FieldFilled { get; }
         public void StartGame();
         public void StopGame();
-        public bool Shot(int x, int y);
+        public ShotResult Shot(int x, int y);
     }
 }

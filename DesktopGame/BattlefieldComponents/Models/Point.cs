@@ -11,10 +11,16 @@ namespace DesktopGame.MVVM.Model
         public int X { get;} 
         public int Y { get;}
         
-        public Point(int x, int y)
+        public Point(int x = 0, int y = 0)
         {
             X = x;
             Y = y;
+        }
+
+        public Point(Point p)
+        {
+            X = p.X;
+            Y = p.Y;
         }
     }
 }
