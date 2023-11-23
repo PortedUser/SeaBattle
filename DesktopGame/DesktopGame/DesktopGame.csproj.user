@@ -36,6 +36,9 @@
     <Page Update="Theme\ButtonControlBattleTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Theme\GameMenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Theme\LabelBattlefieldTheme.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -11,7 +11,7 @@
              d:DataContext="{d:DesignInstance {x:Type viewModel:BattlefieldViewModel}}">
     <Border BorderBrush="#08BECF"
             BorderThickness="0,0,2,2"
-            CornerRadius="0,10,7,10">
+            CornerRadius="0,10,7,30">
         <Grid MaxHeight="450"
               MaxWidth="450">
             <Grid.ColumnDefinitions>

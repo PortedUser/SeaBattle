@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace DesktopGame.Core
@@ -13,17 +9,20 @@ namespace DesktopGame.Core
         public ConfigManager() { }
         public string GetConfig(string key)
         {
-            try
-            {
-                var appSettings = ConfigurationManager.AppSettings;
-                string result = appSettings[key];
-                return result;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show($"Ошибка при чтении config файла: {e}");
-                throw e;
-            }
+            var appSettings = ConfigurationManager.AppSettings;
+            string result = appSettings[key];
+            return result;
+            //try
+            //{
+            //    var appSettings = ConfigurationManager.AppSettings;
+            //    string result = appSettings[key];
+            //    return result;
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show($"Ошибка при чтении config файла: {e}");
+            //    throw new Exception($"Ошибка при чтении config файла: {e}");
+            //}
         }
 
     }

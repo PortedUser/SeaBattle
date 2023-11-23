@@ -129,6 +129,10 @@ namespace DesktopGame.MVVM.Model
             {
                 this[x, y].SetFullState(StateCell.Miss);
             }
+            else if (this[x,y].CurrentState == StateCell.Miss || this[x, y].CurrentState == StateCell.Explosion)
+            {
+                return new ShotResult(true);
+            }
             else if (this[x, y].CurrentState != StateCell.Miss)
             {
                 this[x, y].SetFullState(StateCell.Explosion);
@@ -138,7 +142,8 @@ namespace DesktopGame.MVVM.Model
                     if (IsShipSunk(ship))
                     {
                         _countSunkShip++;
-                        if (_countSunkShip == 10) { IsLose = true; OnPropertyChanged(nameof(IsLose)); }
+                        if (_countSunkShip >= 10) 
+                        { IsLose = true; OnPropertyChanged(nameof(IsLose)); IsLose = false; }
                         EncloseShip(ship, baseState);
                         return new ShotResult(true,true);
                     }
@@ -301,7 +306,7 @@ namespace DesktopGame.MVVM.Model
         {
             var rnd = new Random();
             var value = rnd.Next(0, 100);
-            if (value <= 65)
+            if (value <= 50)
             {
                 return AngleOfRotation.Angle_0;
             }

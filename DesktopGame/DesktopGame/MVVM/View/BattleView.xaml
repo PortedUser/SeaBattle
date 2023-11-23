@@ -34,20 +34,26 @@
                          Grid.Column="0"
                          Grid.Row="1"/>
 
-            <StackPanel Grid.Row="1" 
-                        Grid.Column="2"
-                        Margin="20,10,5,10">
+            <Grid Grid.Row="1" 
+                  Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="4,10,0,0">
 
-                <Button  Content="{Binding SwitchStateGame.Text}"
-                         Command="{Binding SwitchStateGame.Command}"
-                         />
+                    <Button  Content="{Binding SwitchStateGame.Text}"
+                             Command="{Binding SwitchStateGame.Command}"
+                             Style="{StaticResource GameMenuButton}"/>
 
-                <Button  Content="{Binding SetRandomField.Text}"
-                         Command="{Binding SetRandomField.Command}"
-                         Visibility="{Binding SetRandomField.Visibility}"
-                         />
-                
-            </StackPanel>
+                    <Button  Content="{Binding SetRandomField.Text}"
+                             Command="{Binding SetRandomField.Command}"
+                             Visibility="{Binding SetRandomField.Visibility}"
+                             Style="{StaticResource GameMenuButton}"/>
+
+                </StackPanel>
+            </Grid>
+            
             
         </Grid>
     </Border>

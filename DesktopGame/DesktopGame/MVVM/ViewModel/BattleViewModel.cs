@@ -86,8 +86,10 @@ namespace DesktopGame.MVVM.ViewModel
                 case "IsLose":
                     MessageBox.Show("Вы победили");
                     StopGame();
+                    EnemyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged1;
+                    MyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged;
                     break;
-                default: break;
+                default:break;
             }
         }
 
@@ -98,6 +100,8 @@ namespace DesktopGame.MVVM.ViewModel
                 case "IsLose":
                     MessageBox.Show("Вы проиграли");
                     StopGame();
+                    MyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged;
+                    EnemyFieldVM.CurrentField.PropertyChanged += CurrentField_PropertyChanged1;
                     break;
                 default: break;
             }

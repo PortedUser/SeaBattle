@@ -7,7 +7,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Label">
-                        <Border CornerRadius="0,20,20,0"
+                        <Border CornerRadius="0,20,20,5"
                                 BorderThickness="0,0,1,1"
                                 BorderBrush="#08BECF">
                             <Label Content="{TemplateBinding Content}"

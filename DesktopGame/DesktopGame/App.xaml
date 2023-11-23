@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="Theme/LabelBattlefieldTheme.xaml"/>
                 <ResourceDictionary Source="Theme/BattlefieldCellTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ButtonControlBattleTheme.xaml"/>
+                <ResourceDictionary Source="Theme/GameMenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:BattleViewModel}">

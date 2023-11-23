@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Repos\SeaBattle\SeaBattle\DesktopGame\DesktopGame\App.xaml
-7283600672
+8-981200462
 
 19-1769050054
 196735971542
-MainWindow.xaml;MVVM\View\BattlefieldControlView.xaml;MVVM\View\BattlefieldView.xaml;MVVM\View\BattleView.xaml;Theme\BattlefieldCellTheme.xaml;Theme\ButtonControlBattleTheme.xaml;Theme\LabelBattlefieldTheme.xaml;
+MainWindow.xaml;MVVM\View\BattlefieldControlView.xaml;MVVM\View\BattlefieldView.xaml;MVVM\View\BattleView.xaml;Theme\BattlefieldCellTheme.xaml;Theme\ButtonControlBattleTheme.xaml;Theme\GameMenuButtonTheme.xaml;Theme\LabelBattlefieldTheme.xaml;
 
 True
 
