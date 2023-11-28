@@ -143,7 +143,7 @@ namespace DesktopGame.MVVM.Model
                     {
                         _countSunkShip++;
                         if (_countSunkShip >= 10) 
-                        { IsLose = true; OnPropertyChanged(nameof(IsLose)); IsLose = false; }
+                        { IsLose = true; OnPropertyChanged(nameof(IsLose)); IsLose = false; _countSunkShip = 0; }
                         EncloseShip(ship, baseState);
                         return new ShotResult(true,true);
                     }

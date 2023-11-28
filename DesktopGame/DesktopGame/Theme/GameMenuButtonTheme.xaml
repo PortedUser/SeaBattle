@@ -37,12 +37,13 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.7"/>
                 <Setter Property="Background">
                     <Setter.Value>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="#456AC6" Offset="0.0" />
                             <GradientStop Color="#08BECF" Offset="0.05" />
-                            <GradientStop Color="#52FFE4" Offset="0.20" />
+                            <GradientStop Color="#52FFE4" Offset="0.15" />
                             <GradientStop Color="Transparent" Offset="1.0" />
                         </LinearGradientBrush>
                     </Setter.Value>
@@ -52,7 +53,7 @@
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="#456AC6" Offset="0.0" />
                             <GradientStop Color="#08BECF" Offset="0.05" />
-                            <GradientStop Color="#52FFE4" Offset="0.20" />
+                            <GradientStop Color="#52FFE4" Offset="0.3" />
                             <GradientStop Color="Transparent" Offset="1.0" />
                         </LinearGradientBrush>
                     </Setter.Value>
@@ -62,12 +63,13 @@
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="BorderBrush" Value="Transparent"/>
                 <Setter Property="BorderThickness" Value="0,2,2,2"/>
+                <Setter Property="Opacity" Value="0.9"/>
                 <Setter Property="Background">
                     <Setter.Value>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="#456AC6" Offset="0.0" />
                             <GradientStop Color="#08BECF" Offset="0.15" />
-                            <GradientStop Color="#52FFE4" Offset="0.30" />
+                            <GradientStop Color="#52FFE4" Offset="0.40" />
                             <GradientStop Color="Transparent" Offset="1.0" />
                         </LinearGradientBrush>
                     </Setter.Value>
